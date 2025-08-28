@@ -1,6 +1,5 @@
 # npmize
 *
-!lib/**
 !dist/**
 !README.md
 !package.json
