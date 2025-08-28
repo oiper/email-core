@@ -1,7 +1,6 @@
 {
   "name": "@oiper/email-core",
-  "version": "0.0.0",
-  "private": false,
+  "version": "0.0.1",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "scripts": {
@@ -14,7 +13,8 @@
     "lint:fix": "eslint . --fix",
     "lint:format": "prettier . --write",
     "live:template": "tsx ./dev/live-template.tsx",
-    "live:template-dev": "run ./dev/live-template.tsx"
+    "live:template-dev": "run ./dev/live-template.tsx",
+    "pub": "tsc --noEmit && eslint . --fix && bun test && npm publish --access public"
   },
   "dependencies": {
     "@react-email/components": "^0.5.1",
