@@ -28,6 +28,16 @@ export type TRenderNodeProps<T = TEmailNodeUnion> = {
   config: TEmailRenderProjectConfig
 }
 
+type EditorInfo = {
+  doSomething?: () => void
+}
+
+type CommonComponentProps = {
+  children: React.ReactNode
+  renderRowWithProps?: TEditorRowGetColumnPropsWrapper
+  RenderComponentWithContent?: React.FC<TEditorComponentRenderWithContentProps>
+}
+
 /**
  * Editor controller props. This is a wrapper around the editor component.
  * This controls how the editor component is rendered.
@@ -50,22 +60,12 @@ export type TEditorComponentProps = Prettify<
   }
 >
 
-type CommonComponentProps = {
-  children: React.ReactNode
-  renderRowWithProps?: TEditorRowGetColumnPropsWrapper
-  RenderComponentWithContent?: React.FC<TEditorComponentRenderWithContentProps>
-}
-
 export type TRenderMode = 'minimal' | 'detailed'
 export type TRenderNodePaths = (string | number)[][]
 
 export type TRenderEditorProps = {
   Editor: React.FC<TEditorComponentProps>
   info: EditorInfo
-}
-
-type EditorInfo = {
-  doSomething: () => void
 }
 
 export type TEmailRenderProjectConfig = {

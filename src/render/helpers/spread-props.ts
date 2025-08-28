@@ -1,10 +1,10 @@
-import { emailNodeHelpers } from '../../schema'
+import { textProperties } from '../../schema/common'
 
 export function spreadTextStyleProperties(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  config: Partial<Record<keyof typeof emailNodeHelpers.textProperties, any>>,
+  config: Partial<Record<keyof typeof textProperties, any>>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  fallbacks: Partial<Record<keyof typeof emailNodeHelpers.textProperties, any>> = {}
+  fallbacks: Partial<Record<keyof typeof textProperties, any>> = {}
 ): Partial<React.CSSProperties> {
   return {
     color: config.color ?? fallbacks.color,

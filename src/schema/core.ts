@@ -4,25 +4,10 @@ import { languages } from 'prismjs'
 import { z } from 'zod'
 import { Prettify } from '../types'
 import * as helpers from './common'
+import { emailNodeTypeMap } from './constants'
+import { TEmailNodeUnion } from './types.t'
 
 type PrismThemes = keyof Omit<Prettify<typeof codeBlockModule>, 'CodeBlock'>
-
-export const emailNodeTypeMap = Object.freeze({
-  Row: 'ROW',
-  Column: 'COLUMN',
-  Section: 'SECTION',
-
-  HTML: 'HTML',
-  Code: 'CODE',
-  Markdown: 'MARKDOWN',
-
-  Text: 'TEXT',
-  Button: 'BUTTON',
-  Heading: 'HEADING',
-
-  Image: 'IMAGE',
-  Spacer: 'SPACER',
-} as const)
 
 const baseSchema = z.object({
   linkHref: z.string().optional(),
@@ -155,4 +140,24 @@ export const emailSpacerSchema = baseSchema.extend({
   type: z.literal(emailNodeTypeMap.Spacer),
   height: z.number(),
   bgColor: helpers.hexColorSchema.optional(),
+})
+
+export const zodEmailNodeSchema: z.ZodType<TEmailNodeUnion> = z.lazy(() => {
+  return z.discriminatedUnion('type', [
+    emailHTMLSchema,
+    emailCodeSchema,
+    emailMarkdownSchema,
+
+    emailTextSchema,
+    emailButtonSchema,
+    emailHeadingSchema,
+
+    emailImageSchema,
+    emailSpacerSchema,
+
+    emailSectionSchema.extend({ children: z.array(zodEmailNodeSchema) }),
+    emailRowSchema.extend({
+      columns: z.array(emailColumnSchema.extend({ children: z.array(zodEmailNodeSchema) })),
+    }),
+  ])
 })
