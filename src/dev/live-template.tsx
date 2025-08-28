@@ -1,7 +1,7 @@
-import React from 'react'
-import Express from 'express'
-import { renderToStaticMarkup } from 'react-dom/server'
 import { Button, render } from '@react-email/components'
+import Express from 'express'
+import React from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
 import { RenderEmail, TEditorComponentProps } from '../render-email'
 
 const app = Express()
@@ -18,25 +18,23 @@ function Editor(props: TEditorComponentProps) {
   }
 
   const emailContent =
-    node.type === 'TEXT' && RenderComponentWithContent ?
+    node.type === 'TEXT' && RenderComponentWithContent ? (
       <RenderComponentWithContent>
         <Rte>{node.content}</Rte>
       </RenderComponentWithContent>
-    : node.type === 'BUTTON' && RenderComponentWithContent ?
+    ) : node.type === 'BUTTON' && RenderComponentWithContent ? (
       <RenderComponentWithContent>
         <Rte>{node.content}</Rte>
       </RenderComponentWithContent>
-    : node.type === 'HEADING' && RenderComponentWithContent ?
+    ) : node.type === 'HEADING' && RenderComponentWithContent ? (
       <RenderComponentWithContent>
         <Rte>{node.content}</Rte>
       </RenderComponentWithContent>
-    : children
+    ) : (
+      children
+    )
 
-  return (
-    <div itemType={`<---${node.type}@${mode}#${paths.join('.')}--->`}>
-      {emailContent}
-    </div>
-  )
+  return <div itemType={`<---${node.type}@${mode}#${paths.join('.')}--->`}>{emailContent}</div>
 }
 
 app.get('/', async (_, res) => {
@@ -149,11 +147,7 @@ app.get('/static', async (_, res) => {
       </Button>
     )
   )
-  res.send(
-    renderToStaticMarkup(
-      <Button dangerouslySetInnerHTML={{ __html: 'HELLO' }} />
-    )
-  )
+  res.send(renderToStaticMarkup(<Button dangerouslySetInnerHTML={{ __html: 'HELLO' }} />))
 })
 
 app.listen(3000, () => {

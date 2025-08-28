@@ -1,7 +1,7 @@
-import { Prettify, TypedOmit } from '../types'
-import { TEmailNodeColumn, TEmailNodeUnion } from '../email-node'
 import { Column } from '@react-email/components'
 import { ReactNode } from 'react'
+import { TEmailNodeColumn, TEmailNodeUnion } from '../email-node'
+import { Prettify, TypedOmit } from '../types'
 
 /**
  * Render an email with the given body and configuration.

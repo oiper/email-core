@@ -10,6 +10,9 @@
     "build": "npmize build",
     "tc": "tsc --noEmit --watch",
     "start": "run ./src/index.ts",
+    "lint": "tsc --noEmit && eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:format": "prettier . --write",
     "live:template": "tsx ./dev/live-template.tsx",
     "live:template-dev": "run ./dev/live-template.tsx"
   },
@@ -24,15 +27,31 @@
     "zod-to-json-schema": "^3.24.6"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.3.2",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.34.0",
     "@types/bun": "^1.2.21",
     "@types/express": "^5.0.3",
     "@types/prismjs": "^1.26.5",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-check-file": "^3.3.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-func": "^0.1.18",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "express": "^5.1.0",
+    "morphdom": "^2.7.7",
     "npmize": "^1.1.11",
+    "prettier": "^3.6.2",
+    "prettier-plugin-organize-imports": "^4.2.0",
     "tsx": "^4.20.5",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0"
   },
   "overrides": {
     "zod-to-json-schema": {

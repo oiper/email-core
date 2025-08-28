@@ -1,7 +1,7 @@
-import React from 'react'
-import { TEmailNodeCode } from '../../email-node'
 import * as codeBlockModule from '@react-email/code-block'
 import { CodeBlock, Column, Row } from '@react-email/components'
+import React from 'react'
+import { TEmailNodeCode } from '../../email-node'
 import { TRenderNodeProps } from '../types.t'
 import { sidePaddingToCombined, sideRadiusToCombined } from '../utils'
 

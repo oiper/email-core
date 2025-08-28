@@ -1,6 +1,6 @@
+import { Column, Img, Row } from '@react-email/components'
 import React from 'react'
 import { TEmailNodeImage } from '../../email-node'
-import { Column, Img, Row } from '@react-email/components'
 import { TRenderNodeProps } from '../types.t'
 
 export function ImageNode(props: TRenderNodeProps<TEmailNodeImage>) {

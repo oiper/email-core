@@ -1,5 +1,5 @@
-import { Prettify } from '../types'
 import { z } from 'zod'
+import { Prettify } from '../types'
 import * as core from './core'
 
 type EmailRowNodeCore = z.infer<typeof core.emailRowSchema>

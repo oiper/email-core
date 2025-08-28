@@ -1,6 +1,6 @@
+import { Column, Heading, Row } from '@react-email/components'
 import React from 'react'
 import { TEmailNodeHeading } from '../../email-node'
-import { Column, Heading, Row } from '@react-email/components'
 import { TEditorComponentRenderWithContentProps, TRenderNodeProps } from '../types.t'
 
 export function HeadingNode(props: TRenderNodeProps<TEmailNodeHeading>) {

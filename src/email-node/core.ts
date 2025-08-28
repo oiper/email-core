@@ -1,8 +1,8 @@
-import { Prettify } from '../types'
 import * as codeBlockModule from '@react-email/code-block'
 import { PrismLanguage } from '@react-email/components'
 import { languages } from 'prismjs'
 import { z } from 'zod'
+import { Prettify } from '../types'
 import * as helpers from './node-helpers'
 
 type PrismThemes = keyof Omit<Prettify<typeof codeBlockModule>, 'CodeBlock'>
@@ -90,9 +90,7 @@ export const emailCodeSchema = baseSchema.extend({
   fontSize: z.number().optional(),
   fontFamily: z.string().optional(),
   showLineNumber: z.boolean().optional(),
-  language: z.enum<PrismLanguage[]>(
-    Object.keys(languages) as [PrismLanguage, ...PrismLanguage[]]
-  ),
+  language: z.enum<PrismLanguage[]>(Object.keys(languages) as [PrismLanguage, ...PrismLanguage[]]),
   theme: z.enum<PrismThemes[]>(
     Object.keys(codeBlockModule).filter((key) => key !== 'CodeBlock') as [
       PrismThemes,

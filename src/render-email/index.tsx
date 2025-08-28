@@ -1,23 +1,12 @@
-import React from 'react'
 import { Body, Head, Html } from '@react-email/components'
-import { ComponentProps } from 'react'
+import React, { ComponentProps } from 'react'
 import { RenderNode } from './components/render-node'
 import { TRenderNodeProps, TRenderProps } from './types.t'
 
-export function RenderEmail({
-  body,
-  shouldRenderOnlyMain,
-  ...props
-}: TRenderProps) {
+export function RenderEmail({ body, shouldRenderOnlyMain, ...props }: TRenderProps) {
   const main = body.map((node, i) => {
     return (
-      <RenderNode
-        key={i}
-        {...props}
-        node={node}
-        paths={[[i]]}
-        ControlEditorWrapper={Wrapper}
-      />
+      <RenderNode key={i} {...props} node={node} paths={[[i]]} ControlEditorWrapper={Wrapper} />
     )
   })
 
