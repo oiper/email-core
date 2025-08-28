@@ -7,7 +7,7 @@ import { Prettify, TypedOmit } from '../types'
  * Render an email with the given body and configuration.
  */
 export type TRenderProps = {
-  mode: TRenderMode
+  mode?: TRenderMode
   editor?: TRenderEditorProps
   shouldRenderOnlyMain?: boolean
 

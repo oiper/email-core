@@ -4,10 +4,17 @@ import { RenderNode } from './components/render-node'
 import { TRenderProps } from './types.t'
 import { Wrapper } from './wrapper'
 
-export function RenderEmail({ body, shouldRenderOnlyMain, ...props }: TRenderProps) {
+export function RenderEmail({ body, mode, shouldRenderOnlyMain, ...props }: TRenderProps) {
   const main = body.map((node, i) => {
     return (
-      <RenderNode key={i} {...props} node={node} paths={[[i]]} ControlEditorWrapper={Wrapper} />
+      <RenderNode
+        key={i}
+        {...props}
+        node={node}
+        paths={[[i]]}
+        mode={mode ?? 'minimal'}
+        ControlEditorWrapper={Wrapper}
+      />
     )
   })
 
