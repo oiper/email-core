@@ -3,7 +3,7 @@ import { PrismLanguage } from '@react-email/components'
 import { languages } from 'prismjs'
 import { z } from 'zod'
 import { Prettify } from '../types'
-import * as helpers from './node-helpers'
+import * as helpers from './common'
 
 type PrismThemes = keyof Omit<Prettify<typeof codeBlockModule>, 'CodeBlock'>
 

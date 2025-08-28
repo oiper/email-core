@@ -1,4 +1,4 @@
-import { emailNodeHelpers } from '../../email-node'
+import { emailNodeHelpers } from '../../schema'
 
 export function spreadTextStyleProperties(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

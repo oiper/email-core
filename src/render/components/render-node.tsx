@@ -12,7 +12,7 @@ import {
   TEmailNodeSpacer,
   TEmailNodeText,
   emailNodeTypeMap,
-} from '../../email-node'
+} from '../../schema'
 
 import { ButtonNode } from './button'
 import { CodeNode } from './code'

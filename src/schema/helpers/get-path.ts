@@ -1,4 +1,4 @@
-import { TRenderNodePaths } from '../../render-email'
+import { TRenderNodePaths } from '../../render'
 import { TEmailNodeUnion } from '../types.t'
 
 export function getPathFromBodyByRef(

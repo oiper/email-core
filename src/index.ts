@@ -1,3 +1,3 @@
-export * from './email-node'
-export * from './render-email'
+export * from './render'
+export * from './schema'
 export * from './types'

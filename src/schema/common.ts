@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { ALLOWED_TEXT_HTML_TAGS, FORBIDDEN_HTML_TAGS } from './config'
-import { hasForbiddenTags, hasUnknownTags } from './parse5'
+import { hasForbiddenTags, hasUnknownTags } from './helpers/parse5'
 
 export const hexColorSchema = z.string().regex(/^#(?:[0-9a-fA-F]{3}){1,2}$/)
 

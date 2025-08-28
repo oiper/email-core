@@ -1,6 +1,6 @@
 import { Column } from '@react-email/components'
 import { ReactNode } from 'react'
-import { TEmailNodeColumn, TEmailNodeUnion } from '../email-node'
+import { TEmailNodeColumn, TEmailNodeUnion } from '../schema'
 import { Prettify, TypedOmit } from '../types'
 
 /**

@@ -1,6 +1,6 @@
 import { Column, Row } from '@react-email/components'
 import React from 'react'
-import { TEmailNodeHTML } from '../../email-node'
+import { TEmailNodeHTML } from '../../schema'
 import { TRenderNodeProps } from '../types.t'
 
 export function HtmlNode(props: TRenderNodeProps<TEmailNodeHTML>) {

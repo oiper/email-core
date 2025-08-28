@@ -12,8 +12,8 @@
     "lint": "tsc --noEmit && eslint .",
     "lint:fix": "eslint . --fix",
     "lint:format": "prettier . --write",
-    "live:template": "tsx ./dev/live-template.tsx",
-    "live:template-dev": "run ./dev/live-template.tsx",
+    "live": "tsx ./dev/live-template.tsx",
+    "live:dev": "run ./dev/live-template.tsx",
     "pub": "tsc --noEmit && eslint . --fix && bun test && npm publish --access public"
   },
   "dependencies": {
@@ -44,6 +44,7 @@
     "eslint-plugin-react-func": "^0.1.18",
     "eslint-plugin-react-hooks": "^5.2.0",
     "express": "^5.1.0",
+    "husky": "^9.1.7",
     "morphdom": "^2.7.7",
     "npmize": "^1.1.11",
     "prettier": "^3.6.2",

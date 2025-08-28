@@ -22,7 +22,7 @@ export const zodEmailNodeSchema: z.ZodType<types.TEmailNodeUnion> = z.lazy(() =>
   ])
 })
 
+export * as emailNodeHelpers from './common'
 export * from './core'
 export * from './helpers'
-export * as emailNodeHelpers from './node-helpers'
 export * from './types.t'

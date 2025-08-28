@@ -1,6 +1,6 @@
 import { Column, Row } from '@react-email/components'
 import React from 'react'
-import { TEmailNodeSpacer } from '../../email-node'
+import { TEmailNodeSpacer } from '../../schema'
 import { TRenderNodeProps } from '../types.t'
 
 export function SpacerNode(props: TRenderNodeProps<TEmailNodeSpacer>) {
