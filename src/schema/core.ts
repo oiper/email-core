@@ -2,9 +2,9 @@ import * as codeBlockModule from '@react-email/code-block'
 import { PrismLanguage } from '@react-email/components'
 import { languages } from 'prismjs'
 import { z } from 'zod'
+import { emailNodeTypeMap } from '../constants'
 import { Prettify } from '../types'
 import * as helpers from './common'
-import { emailNodeTypeMap } from './constants'
 import { TEmailNodeUnion } from './types.t'
 
 type PrismThemes = keyof Omit<Prettify<typeof codeBlockModule>, 'CodeBlock'>
