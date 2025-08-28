@@ -54,6 +54,14 @@ pnpm add @oiper/email-core
 bun add @oiper/email-core
 ```
 
+## Environment Support
+
+This package is designed to work in both **browser** and **Node.js** environments:
+
+- ✅ **Browser**: Full support for client-side rendering and validation
+- ✅ **Node.js**: Complete functionality for server-side processing
+- ⚠️ **Edge Runtime**: Not recommended due to React Email dependencies and DOM requirements
+
 ## Usage
 
 ### Basic Email Rendering
@@ -143,6 +151,8 @@ const updatedNodes = emailNodeHelpers.deleteNode(nodes, path)
 npm test
 ```
 
+**Test Coverage**: This package includes comprehensive test coverage for all core functionality, including email node schemas, rendering components, and helper functions.
+
 ### Development Server
 
 ```bash
@@ -155,14 +165,6 @@ npm run live:template
 npm run build
 ```
 
-## Architecture
-
-The package is organized into three main modules:
-
-1. **`email-node`**: Core email node definitions, schemas, and helpers
-2. **`render-email`**: React-based email rendering system
-3. **`types`**: Shared TypeScript type definitions
-
 ## Contributing
 
 This package is part of the Oiper.com ecosystem. For contributions, please refer to the project's contribution guidelines.
@@ -170,3 +172,9 @@ This package is part of the Oiper.com ecosystem. For contributions, please refer
 ## License
 
 Private package - All rights reserved by Oiper.com
+
+### NOTE:
+
+**Current Status**: This package is not yet ready for public use.
+
+**Future Plans**: This package will be published as open source with an open license in the future.
