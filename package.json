@@ -1,6 +1,7 @@
 {
   "name": "@oiper/email-core",
   "version": "0.0.0",
+  "private": false,
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "scripts": {
@@ -8,7 +9,9 @@
     "dev": "npmize dev",
     "build": "npmize build",
     "tc": "tsc --noEmit --watch",
-    "start": "run ./src/index.ts"
+    "start": "run ./src/index.ts",
+    "live:template": "tsx ./dev/live-template.tsx",
+    "live:template-dev": "run ./dev/live-template.tsx"
   },
   "dependencies": {
     "@react-email/components": "^0.5.1",
@@ -22,10 +25,13 @@
   },
   "devDependencies": {
     "@types/bun": "^1.2.21",
+    "@types/express": "^5.0.3",
     "@types/prismjs": "^1.26.5",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "express": "^5.1.0",
     "npmize": "^1.1.11",
+    "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   },
   "overrides": {
