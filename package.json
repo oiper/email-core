@@ -1,6 +1,6 @@
 {
   "name": "@oiper/email-core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "scripts": {
@@ -62,7 +62,7 @@
   },
   "overrides": {
     "zod-to-json-schema": {
-      "zod": "^4.1.4"
+      "zod": "^4"
     }
   },
   "lint-staged": {
