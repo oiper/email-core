@@ -11,7 +11,6 @@ import {
   TEmailNodeSection,
   TEmailNodeSpacer,
   TEmailNodeText,
-  emailNodeTypeMap,
 } from '../../schema'
 
 import { ButtonNode } from './button'
@@ -28,6 +27,7 @@ import { TextNode } from './text'
 
 import { Container } from '@react-email/components'
 import { ReactNode } from 'react'
+import { emailNodeTypeMap } from '../../constants'
 import { TRenderNodeProps } from '../types.t'
 
 type HandlerFn<T> = (props: TRenderNodeProps<T>) => ReactNode

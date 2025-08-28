@@ -1,3 +1,5 @@
+export * from './constants'
+export * from './lib/parse5'
 export * from './render'
 export * from './schema'
 export * from './types'
