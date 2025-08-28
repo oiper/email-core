@@ -1,3 +1,4 @@
+import React from 'react'
 import { TEmailNodeText } from '../../email-node'
 import { Column, Row, Text } from '@react-email/components'
 import { TEditorComponentRenderWithContentProps, TRenderNodeProps } from '../types.t'

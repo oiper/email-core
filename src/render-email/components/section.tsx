@@ -1,3 +1,4 @@
+import React from 'react'
 import { TEmailNodeSection } from '../../email-node'
 import { Section } from '@react-email/components'
 import { TRenderNodeProps } from '../types.t'

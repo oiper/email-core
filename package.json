@@ -1,6 +1,14 @@
 {
+  "name": "@oiper/email-core",
+  "version": "0.0.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "scripts": {
-    "tc": "tsc --noEmit --watch"
+    "test": "bun test",
+    "dev": "npmize dev",
+    "build": "npmize build",
+    "tc": "tsc --noEmit --watch",
+    "start": "run ./src/index.ts"
   },
   "dependencies": {
     "@react-email/components": "^0.5.1",
@@ -17,6 +25,12 @@
     "@types/prismjs": "^1.26.5",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
+    "npmize": "^1.1.11",
     "typescript": "^5.9.2"
+  },
+  "overrides": {
+    "zod-to-json-schema": {
+      "zod": "^4.1.4"
+    }
   }
 }
