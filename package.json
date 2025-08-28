@@ -4,6 +4,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "scripts": {
+                "prepare": "husky",
     "test": "bun test",
     "dev": "npmize dev",
     "build": "npmize build",
@@ -45,6 +46,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "express": "^5.1.0",
     "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
     "morphdom": "^2.7.7",
     "npmize": "^1.1.11",
     "prettier": "^3.6.2",
@@ -57,5 +59,10 @@
     "zod-to-json-schema": {
       "zod": "^4.1.4"
     }
+  },
+  "lint-staged": {
+    "*": [
+      "eslint --fix --max-warnings 5"
+    ]
   }
 }
