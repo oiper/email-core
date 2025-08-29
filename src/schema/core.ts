@@ -1,6 +1,6 @@
 import * as codeBlockModule from '@react-email/code-block'
 import { PrismLanguage } from '@react-email/components'
-import { languages } from 'prismjs'
+import prismjs from 'prismjs'
 import { z } from 'zod'
 import { emailNodeTypeMap } from '../constants'
 import { Prettify } from '../types'
@@ -10,9 +10,9 @@ import { TEmailNodeUnion } from './types.t'
 type PrismThemes = keyof Omit<Prettify<typeof codeBlockModule>, 'CodeBlock'>
 
 const baseSchema = z.object({
-  linkHref: z.string().optional(),
-  hideOn: z.enum(['mobile', 'desktop']).optional(),
-  meta: z.record(z.string(), z.unknown()).optional(),
+  linkHref: z.string().optional().describe('Link href of the component'),
+  hideOn: z.enum(['mobile', 'desktop']).optional().describe('Hide on mobile or desktop'),
+  meta: z.record(z.string(), z.unknown()).optional().describe('Meta data of the component'),
 })
 
 export const emailRowSchema = baseSchema.extend({
@@ -22,8 +22,8 @@ export const emailRowSchema = baseSchema.extend({
   ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Row),
-  gap: helpers.zPercentageValue.optional(),
-  sideGap: helpers.zPercentageValue.optional(),
+  gap: helpers.zPercentageValue.optional().describe('Gap between columns of the row'),
+  sideGap: helpers.zPercentageValue.optional().describe('Padding around the row'),
 })
 
 export const emailColumnSchema = baseSchema.extend({
@@ -33,7 +33,7 @@ export const emailColumnSchema = baseSchema.extend({
   ...helpers.borderStyleProperties,
 
   type: z.literal(emailNodeTypeMap.Column),
-  vAlign: helpers.verticalAlignment.optional(),
+  vAlign: helpers.verticalAlignment.optional().describe('Vertical alignment of the column'),
 })
 
 export const emailSectionSchema = baseSchema.extend({
@@ -51,7 +51,7 @@ export const emailHTMLSchema = baseSchema.extend({
   ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.HTML),
-  content: helpers.zHtmlString,
+  content: helpers.zHtmlString.describe('HTML content of the component'),
 })
 
 export const emailMarkdownSchema = baseSchema.extend({
@@ -60,7 +60,7 @@ export const emailMarkdownSchema = baseSchema.extend({
   ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Markdown),
-  content: z.string(),
+  content: z.string().describe('Markdown content of the component'),
 })
 
 export const emailCodeSchema = baseSchema.extend({
@@ -69,19 +69,22 @@ export const emailCodeSchema = baseSchema.extend({
   ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Code),
-  content: z.string(),
+  content: z.string().describe('Code content of the component'),
 
-  bgColor: helpers.hexColorSchema.optional(),
-  fontSize: z.number().optional(),
-  fontFamily: z.string().optional(),
-  showLineNumber: z.boolean().optional(),
-  language: z.enum<PrismLanguage[]>(Object.keys(languages) as [PrismLanguage, ...PrismLanguage[]]),
-  theme: z.enum<PrismThemes[]>(
-    Object.keys(codeBlockModule).filter((key) => key !== 'CodeBlock') as [
-      PrismThemes,
-      ...PrismThemes[],
-    ]
-  ),
+  bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
+  fontSize: z.number().optional().describe('Font size of the component'),
+  fontFamily: z.string().optional().describe('Font family of the component'),
+  showLineNumber: z.boolean().optional().describe('Show line number of the component'),
+
+  language: z
+    .enum<PrismLanguage[]>(Object.keys(prismjs.languages) as [PrismLanguage, ...PrismLanguage[]])
+    .describe('Language of the component. Should be a valid Prism language'),
+
+  theme: z
+    .enum<
+      PrismThemes[]
+    >(Object.keys(codeBlockModule).filter((key) => key !== 'CodeBlock') as [PrismThemes, ...PrismThemes[]])
+    .describe('Theme of the component. Should be a valid Prism theme'),
 })
 
 export const emailTextSchema = baseSchema.extend({
@@ -92,8 +95,8 @@ export const emailTextSchema = baseSchema.extend({
   ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Text),
-  content: helpers.zTextString,
-  bgColor: helpers.hexColorSchema.optional(),
+  content: helpers.zTextString.describe('Text content of the component'),
+  bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
 })
 
 export const emailButtonSchema = baseSchema.extend({
@@ -104,8 +107,8 @@ export const emailButtonSchema = baseSchema.extend({
   ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Button),
-  content: helpers.zTextString,
-  bgColor: helpers.hexColorSchema.optional(),
+  content: helpers.zTextString.describe('Text content of the component'),
+  bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
 })
 
 export const emailHeadingSchema = baseSchema.extend({
@@ -116,8 +119,8 @@ export const emailHeadingSchema = baseSchema.extend({
 
   type: z.literal(emailNodeTypeMap.Heading),
   as: z.enum(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
-  content: z.string(),
-  bgColor: helpers.hexColorSchema.optional(),
+  content: z.string().describe('Heading content of the component'),
+  bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
 })
 
 export const emailImageSchema = baseSchema.extend({
@@ -127,9 +130,9 @@ export const emailImageSchema = baseSchema.extend({
   ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Image),
-  src: z.string(),
-  alt: z.string().optional(),
-  href: z.string().optional(),
+  src: z.string().describe('Image source of the component'),
+  alt: z.string().optional().describe('Image alt of the component'),
+  href: z.string().optional().describe('Image href of the component'),
 })
 
 export const emailSpacerSchema = baseSchema.extend({
@@ -138,8 +141,8 @@ export const emailSpacerSchema = baseSchema.extend({
   ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Spacer),
-  height: z.number(),
-  bgColor: helpers.hexColorSchema.optional(),
+  height: z.number().describe('Height of the spacer'),
+  bgColor: helpers.hexColorSchema.optional().describe('Background color of the spacer'),
 })
 
 export const zodEmailNodeSchema: z.ZodType<TEmailNodeUnion> = z.lazy(() => {
@@ -155,9 +158,26 @@ export const zodEmailNodeSchema: z.ZodType<TEmailNodeUnion> = z.lazy(() => {
     emailImageSchema,
     emailSpacerSchema,
 
-    emailSectionSchema.extend({ children: z.array(zodEmailNodeSchema) }),
+    emailSectionSchema.extend({
+      children: z
+        .array(zodEmailNodeSchema)
+        .describe(
+          `Children of the section. Can be any of ${Object.values(emailNodeTypeMap).join(', ')}`
+        ),
+    }),
+
     emailRowSchema.extend({
-      columns: z.array(emailColumnSchema.extend({ children: z.array(zodEmailNodeSchema) })),
+      columns: z
+        .array(
+          emailColumnSchema.extend({
+            children: z
+              .array(zodEmailNodeSchema)
+              .describe(
+                `Children of the column. Can be any of ${Object.values(emailNodeTypeMap).join(', ')}`
+              ),
+          })
+        )
+        .describe(`Columns of the row. Must be an array of ${emailNodeTypeMap.Column}`),
     }),
   ])
 })
