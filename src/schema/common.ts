@@ -27,20 +27,23 @@ export const horizontalAlignment = z.enum(['left', 'center', 'right'])
 export const verticalAlignment = z.enum(['top', 'middle', 'bottom'])
 
 export const borderStyleProperties = {
-  borderLeftWidth: z.number().optional(),
-  borderRightWidth: z.number().optional(),
-  borderTopWidth: z.number().optional(),
-  borderBottomWidth: z.number().optional(),
+  borderLeftWidth: z.number().optional().describe('Border left width of the component'),
+  borderRightWidth: z.number().optional().describe('Border right width of the component'),
+  borderTopWidth: z.number().optional().describe('Border top width of the component'),
+  borderBottomWidth: z.number().optional().describe('Border bottom width of the component'),
 
-  borderColor: hexColorSchema.optional(),
-  borderStyle: z.enum(['solid', 'dashed', 'dotted']).optional(),
+  borderColor: hexColorSchema.optional().describe('Border color of the component'),
+  borderStyle: z
+    .enum(['solid', 'dashed', 'dotted'])
+    .optional()
+    .describe('Border style of the component'),
 }
 
 export const borderRadiusProperties = {
-  radiusLeft: z.number().optional(),
-  radiusRight: z.number().optional(),
-  radiusTop: z.number().optional(),
-  radiusBottom: z.number().optional(),
+  radiusLeft: z.number().optional().describe('Border radius left of the component'),
+  radiusRight: z.number().optional().describe('Border radius right of the component'),
+  radiusTop: z.number().optional().describe('Border radius top of the component'),
+  radiusBottom: z.number().optional().describe('Border radius bottom of the component'),
 }
 
 export const borderProperties = {
@@ -49,58 +52,85 @@ export const borderProperties = {
 }
 
 export const paddingProperties = {
-  paddingTop: z.number().optional(),
-  paddingLeft: z.number().optional(),
-  paddingRight: z.number().optional(),
-  paddingBottom: z.number().optional(),
+  paddingTop: z.number().optional().describe('Padding top of the component'),
+  paddingLeft: z.number().optional().describe('Padding left of the component'),
+  paddingRight: z.number().optional().describe('Padding right of the component'),
+  paddingBottom: z.number().optional().describe('Padding bottom of the component'),
 }
 
 export const containerPaddingProperties = {
-  containerPaddingTop: z.number().optional(),
-  containerPaddingLeft: z.number().optional(),
-  containerPaddingRight: z.number().optional(),
-  containerPaddingBottom: z.number().optional(),
+  containerPaddingTop: z
+    .number()
+    .optional()
+    .describe('Container padding top of the component. Works like margin.'),
+  containerPaddingLeft: z
+    .number()
+    .optional()
+    .describe('Container padding left of the component. Works like margin.'),
+  containerPaddingRight: z
+    .number()
+    .optional()
+    .describe('Container padding right of the component. Works like margin.'),
+  containerPaddingBottom: z
+    .number()
+    .optional()
+    .describe('Container padding bottom of the component. Works like margin.'),
 }
 
 export const textProperties = {
-  color: hexColorSchema.optional(),
+  color: hexColorSchema.optional().describe('Text color of the component'),
 
-  fontSize: z.number().optional(),
-  fontFamily: z.string().optional(),
-  fontWeight: z.enum(['bold', 'normal']).optional(),
-  fontStyle: z.enum(['italic', 'normal']).optional(),
+  fontSize: z.number().optional().describe('Text size of the component'),
+  fontFamily: z.string().optional().describe('Text font family of the component'),
+  fontWeight: z.enum(['bold', 'normal']).optional().describe('Text weight of the component'),
+  fontStyle: z.enum(['italic', 'normal']).optional().describe('Text style of the component'),
 
-  direction: z.enum(['ltr', 'rtl']).optional(),
-  whiteSpace: z.enum(['normal', 'nowrap', 'pre']).optional(),
+  direction: z.enum(['ltr', 'rtl']).optional().describe('Text direction of the component'),
+  whiteSpace: z
+    .enum(['normal', 'nowrap', 'pre'])
+    .optional()
+    .describe('Text white space of the component'),
 
-  textAlign: z.enum(['left', 'center', 'right', 'justify']).optional(),
-  textTransform: z.enum(['uppercase', 'lowercase', 'capitalize']).optional(),
+  textAlign: z
+    .enum(['left', 'center', 'right', 'justify'])
+    .optional()
+    .describe('Text align of the component'),
+  textTransform: z
+    .enum(['uppercase', 'lowercase', 'capitalize'])
+    .optional()
+    .describe('Text transform of the component'),
 
   /**
    * Overline, underline, line-through
    */
-  textOverline: z.boolean().optional(),
-  textUnderline: z.boolean().optional(),
-  textLineThrough: z.boolean().optional(),
+  textOverline: z.boolean().optional().describe('Text overline of the component'),
+  textUnderline: z.boolean().optional().describe('Text underline of the component'),
+  textLineThrough: z.boolean().optional().describe('Text line through of the component'),
 
-  lineHeight: z.number().optional(),
-  letterSpacing: z.number().optional(),
-  wordSpacing: z.number().optional(),
+  lineHeight: z.number().optional().describe('Text line height of the component'),
+  letterSpacing: z.number().optional().describe('Text letter spacing of the component'),
+  wordSpacing: z.number().optional().describe('Text word spacing of the component'),
 }
 
 export const widthProperties = {
-  width: zPercentageValue.optional(),
-  align: horizontalAlignment.optional(),
+  width: zPercentageValue.optional().describe('Width of the component'),
+  align: horizontalAlignment.optional().describe('Horizontal alignment of the component'),
 }
 
 export const maxWidthProperties = {
-  maxWidth: z.number().optional(),
+  maxWidth: z.number().optional().describe('Max width of the component'),
   ...widthProperties,
 }
 
 export const backgroundProperties = {
-  bgImage: z.string().optional(),
-  bgColor: hexColorSchema.optional(),
+  bgImage: z
+    .string()
+    .optional()
+    .describe('Background image of the component should be a valid URL'),
+
+  bgColor: hexColorSchema
+    .optional()
+    .describe('Background color of the component should be a valid hex color'),
 }
 
 export const sectionProperties = {
