@@ -1,6 +1,6 @@
 # 📘 Email Components API Reference
 
-## EmailButton
+## Button
 
 _Object containing the following properties:_
 
@@ -32,10 +32,10 @@ _Object containing the following properties:_
 | `borderBottomWidth`      | Border bottom width of the component                          | `number`                                           |
 | `borderColor`            | Border color of the component                                 | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
 | `borderStyle`            | Border style of the component                                 | `'solid' \| 'dashed' \| 'dotted'`                  |
-| `radiusLeft`             | Border radius left of the component                           | `number`                                           |
-| `radiusRight`            | Border radius right of the component                          | `number`                                           |
-| `radiusTop`              | Border radius top of the component                            | `number`                                           |
-| `radiusBottom`           | Border radius bottom of the component                         | `number`                                           |
+| `radiusTopLeft`          | Border radius left of the component                           | `number`                                           |
+| `radiusTopRight`         | Border radius right of the component                          | `number`                                           |
+| `radiusBottomLeft`       | Border radius top of the component                            | `number`                                           |
+| `radiusBottomRight`      | Border radius bottom of the component                         | `number`                                           |
 | `paddingTop`             | Padding top of the component                                  | `number`                                           |
 | `paddingLeft`            | Padding left of the component                                 | `number`                                           |
 | `paddingRight`           | Padding right of the component                                | `number`                                           |
@@ -50,7 +50,7 @@ _Object containing the following properties:_
 
 _(\*) Required._
 
-## EmailCode
+## Code
 
 _Object containing the following properties:_
 
@@ -65,10 +65,10 @@ _Object containing the following properties:_
 | `borderBottomWidth`      | Border bottom width of the component                          | `number`                                                                                                                                                                                                                                                                                                                                               |
 | `borderColor`            | Border color of the component                                 | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_)                                                                                                                                                                                                                                                                                                     |
 | `borderStyle`            | Border style of the component                                 | `'solid' \| 'dashed' \| 'dotted'`                                                                                                                                                                                                                                                                                                                      |
-| `radiusLeft`             | Border radius left of the component                           | `number`                                                                                                                                                                                                                                                                                                                                               |
-| `radiusRight`            | Border radius right of the component                          | `number`                                                                                                                                                                                                                                                                                                                                               |
-| `radiusTop`              | Border radius top of the component                            | `number`                                                                                                                                                                                                                                                                                                                                               |
-| `radiusBottom`           | Border radius bottom of the component                         | `number`                                                                                                                                                                                                                                                                                                                                               |
+| `radiusTopLeft`          | Border radius left of the component                           | `number`                                                                                                                                                                                                                                                                                                                                               |
+| `radiusTopRight`         | Border radius right of the component                          | `number`                                                                                                                                                                                                                                                                                                                                               |
+| `radiusBottomLeft`       | Border radius top of the component                            | `number`                                                                                                                                                                                                                                                                                                                                               |
+| `radiusBottomRight`      | Border radius bottom of the component                         | `number`                                                                                                                                                                                                                                                                                                                                               |
 | `maxWidth`               | Max width of the component                                    | `number`                                                                                                                                                                                                                                                                                                                                               |
 | `width`                  | Width of the component                                        | `number` (_≥0, ≤100_)                                                                                                                                                                                                                                                                                                                                  |
 | `align`                  | Horizontal alignment of the component                         | `'left' \| 'center' \| 'right'`                                                                                                                                                                                                                                                                                                                        |
@@ -87,7 +87,7 @@ _Object containing the following properties:_
 
 _(\*) Required._
 
-## EmailColumn
+## Column
 
 _Object containing the following properties:_
 
@@ -115,7 +115,7 @@ _Object containing the following properties:_
 
 _(\*) Required._
 
-## EmailHTML
+## HTML
 
 _Object containing the following properties:_
 
@@ -130,10 +130,10 @@ _Object containing the following properties:_
 | `borderBottomWidth`      | Border bottom width of the component                          | `number`                                           |
 | `borderColor`            | Border color of the component                                 | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
 | `borderStyle`            | Border style of the component                                 | `'solid' \| 'dashed' \| 'dotted'`                  |
-| `radiusLeft`             | Border radius left of the component                           | `number`                                           |
-| `radiusRight`            | Border radius right of the component                          | `number`                                           |
-| `radiusTop`              | Border radius top of the component                            | `number`                                           |
-| `radiusBottom`           | Border radius bottom of the component                         | `number`                                           |
+| `radiusTopLeft`          | Border radius left of the component                           | `number`                                           |
+| `radiusTopRight`         | Border radius right of the component                          | `number`                                           |
+| `radiusBottomLeft`       | Border radius top of the component                            | `number`                                           |
+| `radiusBottomRight`      | Border radius bottom of the component                         | `number`                                           |
 | `maxWidth`               | Max width of the component                                    | `number`                                           |
 | `width`                  | Width of the component                                        | `number` (_≥0, ≤100_)                              |
 | `align`                  | Horizontal alignment of the component                         | `'left' \| 'center' \| 'right'`                    |
@@ -148,7 +148,7 @@ _Object containing the following properties:_
 
 _(\*) Required._
 
-## EmailHeading
+## Heading
 
 _Object containing the following properties:_
 
@@ -172,16 +172,18 @@ _Object containing the following properties:_
 | `lineHeight`             | Text line height of the component                             | `number`                                           |
 | `letterSpacing`          | Text letter spacing of the component                          | `number`                                           |
 | `wordSpacing`            | Text word spacing of the component                            | `number`                                           |
+| `width`                  | Width of the component                                        | `number` (_≥0, ≤100_)                              |
+| `align`                  | Horizontal alignment of the component                         | `'left' \| 'center' \| 'right'`                    |
 | `borderLeftWidth`        | Border left width of the component                            | `number`                                           |
 | `borderRightWidth`       | Border right width of the component                           | `number`                                           |
 | `borderTopWidth`         | Border top width of the component                             | `number`                                           |
 | `borderBottomWidth`      | Border bottom width of the component                          | `number`                                           |
 | `borderColor`            | Border color of the component                                 | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
 | `borderStyle`            | Border style of the component                                 | `'solid' \| 'dashed' \| 'dotted'`                  |
-| `radiusLeft`             | Border radius left of the component                           | `number`                                           |
-| `radiusRight`            | Border radius right of the component                          | `number`                                           |
-| `radiusTop`              | Border radius top of the component                            | `number`                                           |
-| `radiusBottom`           | Border radius bottom of the component                         | `number`                                           |
+| `radiusTopLeft`          | Border radius left of the component                           | `number`                                           |
+| `radiusTopRight`         | Border radius right of the component                          | `number`                                           |
+| `radiusBottomLeft`       | Border radius top of the component                            | `number`                                           |
+| `radiusBottomRight`      | Border radius bottom of the component                         | `number`                                           |
 | `paddingTop`             | Padding top of the component                                  | `number`                                           |
 | `paddingLeft`            | Padding left of the component                                 | `number`                                           |
 | `paddingRight`           | Padding right of the component                                | `number`                                           |
@@ -197,43 +199,39 @@ _Object containing the following properties:_
 
 _(\*) Required._
 
-## EmailImage
+## Image
 
 _Object containing the following properties:_
 
-| Property                 | Description                                                   | Type                                               |
-| :----------------------- | :------------------------------------------------------------ | :------------------------------------------------- |
-| `linkHref`               | Link href of the component                                    | `string`                                           |
-| `hideOn`                 | Hide on mobile or desktop                                     | `'mobile' \| 'desktop'`                            |
-| `meta`                   | Meta data of the component                                    | `Record<string, unknown>`                          |
-| `width`                  | Width of the component                                        | `number` (_≥0, ≤100_)                              |
-| `align`                  | Horizontal alignment of the component                         | `'left' \| 'center' \| 'right'`                    |
-| `borderLeftWidth`        | Border left width of the component                            | `number`                                           |
-| `borderRightWidth`       | Border right width of the component                           | `number`                                           |
-| `borderTopWidth`         | Border top width of the component                             | `number`                                           |
-| `borderBottomWidth`      | Border bottom width of the component                          | `number`                                           |
-| `borderColor`            | Border color of the component                                 | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
-| `borderStyle`            | Border style of the component                                 | `'solid' \| 'dashed' \| 'dotted'`                  |
-| `radiusLeft`             | Border radius left of the component                           | `number`                                           |
-| `radiusRight`            | Border radius right of the component                          | `number`                                           |
-| `radiusTop`              | Border radius top of the component                            | `number`                                           |
-| `radiusBottom`           | Border radius bottom of the component                         | `number`                                           |
-| `paddingTop`             | Padding top of the component                                  | `number`                                           |
-| `paddingLeft`            | Padding left of the component                                 | `number`                                           |
-| `paddingRight`           | Padding right of the component                                | `number`                                           |
-| `paddingBottom`          | Padding bottom of the component                               | `number`                                           |
-| `containerPaddingTop`    | Container padding top of the component. Works like margin.    | `number`                                           |
-| `containerPaddingLeft`   | Container padding left of the component. Works like margin.   | `number`                                           |
-| `containerPaddingRight`  | Container padding right of the component. Works like margin.  | `number`                                           |
-| `containerPaddingBottom` | Container padding bottom of the component. Works like margin. | `number`                                           |
-| **`type`** (\*)          |                                                               | `'IMAGE'`                                          |
-| **`src`** (\*)           | Image source of the component                                 | `string`                                           |
-| `alt`                    | Image alt of the component                                    | `string`                                           |
-| `href`                   | Image href of the component                                   | `string`                                           |
+| Property            | Description                           | Type                                               |
+| :------------------ | :------------------------------------ | :------------------------------------------------- |
+| `linkHref`          | Link href of the component            | `string`                                           |
+| `hideOn`            | Hide on mobile or desktop             | `'mobile' \| 'desktop'`                            |
+| `meta`              | Meta data of the component            | `Record<string, unknown>`                          |
+| `width`             | Width of the component                | `number` (_≥0, ≤100_)                              |
+| `align`             | Horizontal alignment of the component | `'left' \| 'center' \| 'right'`                    |
+| `borderLeftWidth`   | Border left width of the component    | `number`                                           |
+| `borderRightWidth`  | Border right width of the component   | `number`                                           |
+| `borderTopWidth`    | Border top width of the component     | `number`                                           |
+| `borderBottomWidth` | Border bottom width of the component  | `number`                                           |
+| `borderColor`       | Border color of the component         | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
+| `borderStyle`       | Border style of the component         | `'solid' \| 'dashed' \| 'dotted'`                  |
+| `radiusTopLeft`     | Border radius left of the component   | `number`                                           |
+| `radiusTopRight`    | Border radius right of the component  | `number`                                           |
+| `radiusBottomLeft`  | Border radius top of the component    | `number`                                           |
+| `radiusBottomRight` | Border radius bottom of the component | `number`                                           |
+| `paddingTop`        | Padding top of the component          | `number`                                           |
+| `paddingLeft`       | Padding left of the component         | `number`                                           |
+| `paddingRight`      | Padding right of the component        | `number`                                           |
+| `paddingBottom`     | Padding bottom of the component       | `number`                                           |
+| **`type`** (\*)     |                                       | `'IMAGE'`                                          |
+| **`src`** (\*)      | Image source of the component         | `string`                                           |
+| `alt`               | Image alt of the component            | `string`                                           |
+| `href`              | Image href of the component           | `string`                                           |
 
 _(\*) Required._
 
-## EmailMarkdown
+## Markdown
 
 _Object containing the following properties:_
 
@@ -248,10 +246,10 @@ _Object containing the following properties:_
 | `borderBottomWidth`      | Border bottom width of the component                          | `number`                                           |
 | `borderColor`            | Border color of the component                                 | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
 | `borderStyle`            | Border style of the component                                 | `'solid' \| 'dashed' \| 'dotted'`                  |
-| `radiusLeft`             | Border radius left of the component                           | `number`                                           |
-| `radiusRight`            | Border radius right of the component                          | `number`                                           |
-| `radiusTop`              | Border radius top of the component                            | `number`                                           |
-| `radiusBottom`           | Border radius bottom of the component                         | `number`                                           |
+| `radiusTopLeft`          | Border radius left of the component                           | `number`                                           |
+| `radiusTopRight`         | Border radius right of the component                          | `number`                                           |
+| `radiusBottomLeft`       | Border radius top of the component                            | `number`                                           |
+| `radiusBottomRight`      | Border radius bottom of the component                         | `number`                                           |
 | `maxWidth`               | Max width of the component                                    | `number`                                           |
 | `width`                  | Width of the component                                        | `number` (_≥0, ≤100_)                              |
 | `align`                  | Horizontal alignment of the component                         | `'left' \| 'center' \| 'right'`                    |
@@ -266,7 +264,7 @@ _Object containing the following properties:_
 
 _(\*) Required._
 
-## EmailRow
+## Row
 
 _Object containing the following properties:_
 
@@ -281,10 +279,10 @@ _Object containing the following properties:_
 | `borderBottomWidth`      | Border bottom width of the component                          | `number`                                           |
 | `borderColor`            | Border color of the component                                 | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
 | `borderStyle`            | Border style of the component                                 | `'solid' \| 'dashed' \| 'dotted'`                  |
-| `radiusLeft`             | Border radius left of the component                           | `number`                                           |
-| `radiusRight`            | Border radius right of the component                          | `number`                                           |
-| `radiusTop`              | Border radius top of the component                            | `number`                                           |
-| `radiusBottom`           | Border radius bottom of the component                         | `number`                                           |
+| `radiusTopLeft`          | Border radius left of the component                           | `number`                                           |
+| `radiusTopRight`         | Border radius right of the component                          | `number`                                           |
+| `radiusBottomLeft`       | Border radius top of the component                            | `number`                                           |
+| `radiusBottomRight`      | Border radius bottom of the component                         | `number`                                           |
 | `maxWidth`               | Max width of the component                                    | `number`                                           |
 | `width`                  | Width of the component                                        | `number` (_≥0, ≤100_)                              |
 | `align`                  | Horizontal alignment of the component                         | `'left' \| 'center' \| 'right'`                    |
@@ -301,79 +299,71 @@ _Object containing the following properties:_
 | **`type`** (\*)          |                                                               | `'ROW'`                                            |
 | `gap`                    | Gap between columns of the row                                | `number` (_≥0, ≤100_)                              |
 | `sideGap`                | Padding around the row                                        | `number` (_≥0, ≤100_)                              |
+| `hideSideGapOnMobile`    | Hide side gap on mobile                                       | `boolean`                                          |
 
 _(\*) Required._
 
-## EmailSection
+## Section
 
 _Object containing the following properties:_
 
-| Property                 | Description                                                   | Type                                               |
-| :----------------------- | :------------------------------------------------------------ | :------------------------------------------------- |
-| `linkHref`               | Link href of the component                                    | `string`                                           |
-| `hideOn`                 | Hide on mobile or desktop                                     | `'mobile' \| 'desktop'`                            |
-| `meta`                   | Meta data of the component                                    | `Record<string, unknown>`                          |
-| `borderLeftWidth`        | Border left width of the component                            | `number`                                           |
-| `borderRightWidth`       | Border right width of the component                           | `number`                                           |
-| `borderTopWidth`         | Border top width of the component                             | `number`                                           |
-| `borderBottomWidth`      | Border bottom width of the component                          | `number`                                           |
-| `borderColor`            | Border color of the component                                 | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
-| `borderStyle`            | Border style of the component                                 | `'solid' \| 'dashed' \| 'dotted'`                  |
-| `radiusLeft`             | Border radius left of the component                           | `number`                                           |
-| `radiusRight`            | Border radius right of the component                          | `number`                                           |
-| `radiusTop`              | Border radius top of the component                            | `number`                                           |
-| `radiusBottom`           | Border radius bottom of the component                         | `number`                                           |
-| `maxWidth`               | Max width of the component                                    | `number`                                           |
-| `width`                  | Width of the component                                        | `number` (_≥0, ≤100_)                              |
-| `align`                  | Horizontal alignment of the component                         | `'left' \| 'center' \| 'right'`                    |
-| `bgImage`                | Background image of the component should be a valid URL       | `string`                                           |
-| `bgColor`                | Background color of the component should be a valid hex color | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
-| `paddingTop`             | Padding top of the component                                  | `number`                                           |
-| `paddingLeft`            | Padding left of the component                                 | `number`                                           |
-| `paddingRight`           | Padding right of the component                                | `number`                                           |
-| `paddingBottom`          | Padding bottom of the component                               | `number`                                           |
-| `containerPaddingTop`    | Container padding top of the component. Works like margin.    | `number`                                           |
-| `containerPaddingLeft`   | Container padding left of the component. Works like margin.   | `number`                                           |
-| `containerPaddingRight`  | Container padding right of the component. Works like margin.  | `number`                                           |
-| `containerPaddingBottom` | Container padding bottom of the component. Works like margin. | `number`                                           |
-| **`type`** (\*)          |                                                               | `'SECTION'`                                        |
+| Property              | Description                                                   | Type                                               |
+| :-------------------- | :------------------------------------------------------------ | :------------------------------------------------- |
+| `linkHref`            | Link href of the component                                    | `string`                                           |
+| `hideOn`              | Hide on mobile or desktop                                     | `'mobile' \| 'desktop'`                            |
+| `meta`                | Meta data of the component                                    | `Record<string, unknown>`                          |
+| `borderLeftWidth`     | Border left width of the component                            | `number`                                           |
+| `borderRightWidth`    | Border right width of the component                           | `number`                                           |
+| `borderTopWidth`      | Border top width of the component                             | `number`                                           |
+| `borderBottomWidth`   | Border bottom width of the component                          | `number`                                           |
+| `borderColor`         | Border color of the component                                 | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
+| `borderStyle`         | Border style of the component                                 | `'solid' \| 'dashed' \| 'dotted'`                  |
+| `radiusTopLeft`       | Border radius left of the component                           | `number`                                           |
+| `radiusTopRight`      | Border radius right of the component                          | `number`                                           |
+| `radiusBottomLeft`    | Border radius top of the component                            | `number`                                           |
+| `radiusBottomRight`   | Border radius bottom of the component                         | `number`                                           |
+| `maxWidth`            | Max width of the component                                    | `number`                                           |
+| `width`               | Width of the component                                        | `number` (_≥0, ≤100_)                              |
+| `align`               | Horizontal alignment of the component                         | `'left' \| 'center' \| 'right'`                    |
+| `bgImage`             | Background image of the component should be a valid URL       | `string`                                           |
+| `bgColor`             | Background color of the component should be a valid hex color | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
+| `paddingTop`          | Padding top of the component                                  | `number`                                           |
+| `paddingLeft`         | Padding left of the component                                 | `number`                                           |
+| `paddingRight`        | Padding right of the component                                | `number`                                           |
+| `paddingBottom`       | Padding bottom of the component                               | `number`                                           |
+| **`type`** (\*)       |                                                               | `'SECTION'`                                        |
+| `gap`                 | Gap between the children                                      | `number`                                           |
+| `sideGap`             | Padding around the section                                    | `number` (_≥0, ≤100_)                              |
+| `hideSideGapOnMobile` | Hide side gap on mobile                                       | `boolean`                                          |
 
 _(\*) Required._
 
-## EmailSpacer
+## Spacer
 
 _Object containing the following properties:_
 
-| Property                 | Description                                                   | Type                                               |
-| :----------------------- | :------------------------------------------------------------ | :------------------------------------------------- |
-| `linkHref`               | Link href of the component                                    | `string`                                           |
-| `hideOn`                 | Hide on mobile or desktop                                     | `'mobile' \| 'desktop'`                            |
-| `meta`                   | Meta data of the component                                    | `Record<string, unknown>`                          |
-| `borderLeftWidth`        | Border left width of the component                            | `number`                                           |
-| `borderRightWidth`       | Border right width of the component                           | `number`                                           |
-| `borderTopWidth`         | Border top width of the component                             | `number`                                           |
-| `borderBottomWidth`      | Border bottom width of the component                          | `number`                                           |
-| `borderColor`            | Border color of the component                                 | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
-| `borderStyle`            | Border style of the component                                 | `'solid' \| 'dashed' \| 'dotted'`                  |
-| `radiusLeft`             | Border radius left of the component                           | `number`                                           |
-| `radiusRight`            | Border radius right of the component                          | `number`                                           |
-| `radiusTop`              | Border radius top of the component                            | `number`                                           |
-| `radiusBottom`           | Border radius bottom of the component                         | `number`                                           |
-| `paddingTop`             | Padding top of the component                                  | `number`                                           |
-| `paddingLeft`            | Padding left of the component                                 | `number`                                           |
-| `paddingRight`           | Padding right of the component                                | `number`                                           |
-| `paddingBottom`          | Padding bottom of the component                               | `number`                                           |
-| `containerPaddingTop`    | Container padding top of the component. Works like margin.    | `number`                                           |
-| `containerPaddingLeft`   | Container padding left of the component. Works like margin.   | `number`                                           |
-| `containerPaddingRight`  | Container padding right of the component. Works like margin.  | `number`                                           |
-| `containerPaddingBottom` | Container padding bottom of the component. Works like margin. | `number`                                           |
-| **`type`** (\*)          |                                                               | `'SPACER'`                                         |
-| **`height`** (\*)        | Height of the spacer                                          | `number`                                           |
-| `bgColor`                | Background color of the spacer                                | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
+| Property            | Description                           | Type                                               |
+| :------------------ | :------------------------------------ | :------------------------------------------------- |
+| `linkHref`          | Link href of the component            | `string`                                           |
+| `hideOn`            | Hide on mobile or desktop             | `'mobile' \| 'desktop'`                            |
+| `meta`              | Meta data of the component            | `Record<string, unknown>`                          |
+| `borderLeftWidth`   | Border left width of the component    | `number`                                           |
+| `borderRightWidth`  | Border right width of the component   | `number`                                           |
+| `borderTopWidth`    | Border top width of the component     | `number`                                           |
+| `borderBottomWidth` | Border bottom width of the component  | `number`                                           |
+| `borderColor`       | Border color of the component         | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
+| `borderStyle`       | Border style of the component         | `'solid' \| 'dashed' \| 'dotted'`                  |
+| `radiusTopLeft`     | Border radius left of the component   | `number`                                           |
+| `radiusTopRight`    | Border radius right of the component  | `number`                                           |
+| `radiusBottomLeft`  | Border radius top of the component    | `number`                                           |
+| `radiusBottomRight` | Border radius bottom of the component | `number`                                           |
+| **`type`** (\*)     |                                       | `'SPACER'`                                         |
+| **`height`** (\*)   | Height of the spacer                  | `number`                                           |
+| `bgColor`           | Background color of the spacer        | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
 
 _(\*) Required._
 
-## EmailText
+## Text
 
 _Object containing the following properties:_
 
@@ -405,10 +395,10 @@ _Object containing the following properties:_
 | `borderBottomWidth`      | Border bottom width of the component                          | `number`                                           |
 | `borderColor`            | Border color of the component                                 | `string` (_regex: `/^#(?:[0-9a-fA-F]{3}){1,2}$/`_) |
 | `borderStyle`            | Border style of the component                                 | `'solid' \| 'dashed' \| 'dotted'`                  |
-| `radiusLeft`             | Border radius left of the component                           | `number`                                           |
-| `radiusRight`            | Border radius right of the component                          | `number`                                           |
-| `radiusTop`              | Border radius top of the component                            | `number`                                           |
-| `radiusBottom`           | Border radius bottom of the component                         | `number`                                           |
+| `radiusTopLeft`          | Border radius left of the component                           | `number`                                           |
+| `radiusTopRight`         | Border radius right of the component                          | `number`                                           |
+| `radiusBottomLeft`       | Border radius top of the component                            | `number`                                           |
+| `radiusBottomRight`      | Border radius bottom of the component                         | `number`                                           |
 | `paddingTop`             | Padding top of the component                                  | `number`                                           |
 | `paddingLeft`            | Padding left of the component                                 | `number`                                           |
 | `paddingRight`           | Padding right of the component                                | `number`                                           |

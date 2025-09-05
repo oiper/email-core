@@ -1,4 +1,4 @@
-import React, { ComponentProps } from 'react'
+import { ComponentProps } from 'react'
 import { TRenderNodeProps } from './types.t'
 
 type ControllerProps = ComponentProps<TRenderNodeProps['ControlEditorWrapper']>
