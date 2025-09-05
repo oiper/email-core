@@ -126,7 +126,6 @@ export const emailImageSchema = baseSchema.extend({
   ...helpers.widthProperties,
   ...helpers.borderProperties,
   ...helpers.paddingProperties,
-  ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Image),
   src: z.string().describe('Image source of the component'),
@@ -136,8 +135,6 @@ export const emailImageSchema = baseSchema.extend({
 
 export const emailSpacerSchema = baseSchema.extend({
   ...helpers.borderProperties,
-  ...helpers.paddingProperties,
-  ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Spacer),
   height: z.number().describe('Height of the spacer'),
