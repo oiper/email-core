@@ -5,7 +5,7 @@ export const imageComponents: ComponentRenderer[] = [
     name: 'Basic Image',
     node: {
       type: 'IMAGE',
-      src: 'https://picsum.photos/600/400',
+      src: 'https://placehold.co/620x410/png',
       alt: 'Sample image',
     },
   },
@@ -13,7 +13,7 @@ export const imageComponents: ComponentRenderer[] = [
     name: 'Rounded Image',
     node: {
       type: 'IMAGE',
-      src: 'https://picsum.photos/400/400',
+      src: 'https://placehold.co/380x380/png',
       alt: 'Rounded image',
       radiusTopLeft: 50,
       radiusTopRight: 50,
@@ -25,7 +25,7 @@ export const imageComponents: ComponentRenderer[] = [
     name: 'Image with Border',
     node: {
       type: 'IMAGE',
-      src: 'https://picsum.photos/500/300',
+      src: 'https://placehold.co/480x290/png',
       alt: 'Image with border',
       borderStyle: 'solid',
       borderColor: '#007bff',
@@ -39,7 +39,7 @@ export const imageComponents: ComponentRenderer[] = [
     name: 'Clickable Image',
     node: {
       type: 'IMAGE',
-      src: 'https://picsum.photos/300/200',
+      src: 'https://placehold.co/320x180/png',
       alt: 'Clickable image',
       href: 'https://example.com',
     },
@@ -48,7 +48,7 @@ export const imageComponents: ComponentRenderer[] = [
     name: 'Small Image',
     node: {
       type: 'IMAGE',
-      src: 'https://picsum.photos/200/200',
+      src: 'https://placehold.co/180x180/png',
       alt: 'Small image',
     },
   },
@@ -56,7 +56,7 @@ export const imageComponents: ComponentRenderer[] = [
     name: 'Wide Image',
     node: {
       type: 'IMAGE',
-      src: 'https://picsum.photos/800/200',
+      src: 'https://placehold.co/750x190/png',
       alt: 'Wide image',
     },
   },

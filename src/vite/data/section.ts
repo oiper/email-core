@@ -131,7 +131,7 @@ export const sectionComponents: ComponentRenderer[] = [
     name: 'Section with Background Image',
     node: {
       type: 'SECTION',
-      bgImage: 'https://picsum.photos/1200/300',
+      bgImage: 'https://placehold.co/1150x280/png',
       paddingTop: 50,
       paddingLeft: 50,
       paddingRight: 50,

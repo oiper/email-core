@@ -35,7 +35,7 @@ export const rowColumnComponents: ComponentRenderer[] = [
           children: [
             {
               type: 'IMAGE',
-              src: 'https://picsum.photos/300/200',
+              src: 'https://placehold.co/280x210/png',
               alt: 'Platform preview',
               radiusTopLeft: 8,
               radiusTopRight: 8,
@@ -58,7 +58,7 @@ export const rowColumnComponents: ComponentRenderer[] = [
           children: [
             {
               type: 'IMAGE',
-              src: 'https://picsum.photos/200/150',
+              src: 'https://placehold.co/220x165/png',
               alt: 'Feature 1',
               radiusTopLeft: 8,
               radiusTopRight: 8,
@@ -82,7 +82,7 @@ export const rowColumnComponents: ComponentRenderer[] = [
           children: [
             {
               type: 'IMAGE',
-              src: 'https://picsum.photos/200/151',
+              src: 'https://placehold.co/190x140/png',
               alt: 'Feature 2',
               radiusTopLeft: 8,
               radiusTopRight: 8,
@@ -106,7 +106,7 @@ export const rowColumnComponents: ComponentRenderer[] = [
           children: [
             {
               type: 'IMAGE',
-              src: 'https://picsum.photos/200/152',
+              src: 'https://placehold.co/210x160/png',
               alt: 'Feature 3',
               radiusTopLeft: 8,
               radiusTopRight: 8,
@@ -189,7 +189,7 @@ export const rowColumnComponents: ComponentRenderer[] = [
           children: [
             {
               type: 'IMAGE',
-              src: 'https://picsum.photos/100/100',
+              src: 'https://placehold.co/90x90/png',
               alt: 'User avatar',
               radiusTopLeft: 50,
               radiusTopRight: 50,
@@ -360,7 +360,7 @@ export const rowColumnComponents: ComponentRenderer[] = [
       children: [
         {
           type: 'IMAGE',
-          src: 'https://picsum.photos/250/150',
+          src: 'https://placehold.co/240x145/png',
           alt: 'Card image',
           radiusTopLeft: 6,
           radiusTopRight: 6,
