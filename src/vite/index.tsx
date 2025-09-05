@@ -1,15 +1,11 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router'
+import { App } from './app'
 
-function App() {
-  return <h1>Hello Vite + React + TypeScript + SWC 🚀</h1>
-}
+const root = document.getElementById('root')
 
-const root = document.getElementById('app')
-if (!root) throw new Error('Root element not found')
-
-ReactDOM.createRoot(root).render(
-  <React.StrictMode>
+ReactDOM.createRoot(root!).render(
+  <BrowserRouter>
     <App />
-  </React.StrictMode>
+  </BrowserRouter>
 )
