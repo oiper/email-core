@@ -23,7 +23,9 @@ export const emailRowSchema = baseSchema.extend({
 
   type: z.literal(emailNodeTypeMap.Row),
   gap: helpers.zPercentageValue.optional().describe('Gap between columns of the row'),
+
   sideGap: helpers.zPercentageValue.optional().describe('Padding around the row'),
+  hideSideGapOnMobile: z.boolean().optional().describe('Hide side gap on mobile'),
 })
 
 export const emailColumnSchema = baseSchema.extend({
@@ -42,6 +44,10 @@ export const emailSectionSchema = baseSchema.extend({
   ...helpers.paddingProperties,
 
   type: z.literal(emailNodeTypeMap.Section),
+  gap: z.number().optional().describe('Gap between the children'),
+
+  sideGap: helpers.zPercentageValue.optional().describe('Padding around the section'),
+  hideSideGapOnMobile: z.boolean().optional().describe('Hide side gap on mobile'),
 })
 
 export const emailHTMLSchema = baseSchema.extend({
