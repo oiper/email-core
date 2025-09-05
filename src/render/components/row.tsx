@@ -1,5 +1,5 @@
 import { Column, Row } from '@react-email/components'
-import React from 'react'
+
 import { TEmailNodeRow } from '../../schema'
 import { TEditorGetColumnProps, TRenderNodeProps } from '../types.t'
 import { RenderNode } from './render-node'

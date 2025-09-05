@@ -1,5 +1,5 @@
 import { Column, Heading, Row } from '@react-email/components'
-import React from 'react'
+
 import { TEmailNodeHeading } from '../../schema'
 import { TEditorComponentRenderWithContentProps, TRenderNodeProps } from '../types.t'
 

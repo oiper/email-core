@@ -51,8 +51,7 @@ export const codeComponents: ComponentRenderer[] = [
     name: 'Dark Theme Code',
     node: {
       type: 'CODE',
-      content:
-        'import React from "react";\n\nexport default function App() {\n  return <div>Hello React!</div>;\n}',
+      content: '\n\nexport default function App() {\n  return <div>Hello React!</div>;\n}',
       language: 'javascript',
       theme: 'a11yDark',
       bgColor: '#1e1e1e',

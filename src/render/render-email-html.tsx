@@ -1,5 +1,5 @@
 import { Options, render } from '@react-email/components'
-import React from 'react'
+
 import { renderToStaticMarkup, renderToString, ServerOptions } from 'react-dom/server'
 import { RenderEmail, TRenderProps } from '../render'
 

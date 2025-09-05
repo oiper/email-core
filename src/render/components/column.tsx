@@ -1,4 +1,3 @@
-import React from 'react'
 import { TEmailNodeColumn } from '../../schema'
 import { TRenderNodeProps } from '../types.t'
 import { RenderNode } from './render-node'

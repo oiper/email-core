@@ -1,6 +1,6 @@
 import { Button, render } from '@react-email/components'
 import Express from 'express'
-import React from 'react'
+
 import { renderToStaticMarkup } from 'react-dom/server'
 import { RenderEmail, TEditorComponentProps } from '../render'
 
