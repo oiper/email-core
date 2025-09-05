@@ -77,7 +77,6 @@ export function RootLayout() {
                 textDecoration: 'none',
                 paddingInline: '1rem',
                 borderRadius: '6px',
-                textTransform: 'capitalize',
                 color: isActive ? '#fff' : '#333',
                 backgroundColor: isActive ? '#007bff' : '#f5f5f5',
               }}
