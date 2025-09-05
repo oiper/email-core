@@ -1,4 +1,4 @@
-import * as s from '../schema'
+import * as s from '../schema/core'
 
 export const Text = s.emailTextSchema
 export const Heading = s.emailHeadingSchema
