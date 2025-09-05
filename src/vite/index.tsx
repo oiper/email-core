@@ -16,7 +16,7 @@ ReactDOM.createRoot(root!).render(
           <Route index element={<App />} />
 
           {componentPages.map(({ path, element }) => (
-            <Route key={path} path={path} element={element} />
+            <Route key={path} path={path.toLowerCase().replace(' ', '-')} element={element} />
           ))}
         </Route>
       </Routes>

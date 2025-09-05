@@ -64,11 +64,13 @@ export function RootLayout() {
         </Link>
 
         {componentPages.map(({ path }) => {
-          const isActive = location.pathname === `/${path}`
+          const transformedPath = path.toLowerCase().replace(' ', '-')
+          const isActive = location.pathname === `/${transformedPath}`
+
           return (
             <Link
               key={path}
-              to={path}
+              to={transformedPath}
               style={{
                 display: 'flex',
                 alignItems: 'center',
