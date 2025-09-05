@@ -26,6 +26,7 @@ export function RootLayout() {
             textDecoration: 'none',
             fontWeight: 'bold',
             color: '#333',
+            padding: '0.5rem',
           }}
         >
           <svg
