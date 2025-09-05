@@ -159,6 +159,14 @@ export default [
   },
 
   {
+    files: ['./src/vite/data/*.ts'],
+
+    rules: {
+      'max-lines': 0,
+    },
+  },
+
+  {
     files: ['**/*.test.ts'],
 
     rules: {

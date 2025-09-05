@@ -1,15 +1,25 @@
-import React from 'react'
+import './index.css'
+
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Route, Routes } from 'react-router'
+import { App } from './app'
+import { componentPages } from './constants'
+import { RootLayout } from './layout'
 
-function App() {
-  return <h1>Hello Vite + React + TypeScript + SWC 🚀</h1>
-}
+const root = document.getElementById('root')
 
-const root = document.getElementById('app')
-if (!root) throw new Error('Root element not found')
+ReactDOM.createRoot(root!).render(
+  <>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<App />} />
 
-ReactDOM.createRoot(root).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+          {componentPages.map(({ path, element }) => (
+            <Route key={path} path={path.toLowerCase().replace(' ', '-')} element={element} />
+          ))}
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </>
 )

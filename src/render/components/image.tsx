@@ -1,5 +1,5 @@
 import { Column, Img, Row } from '@react-email/components'
-import React from 'react'
+
 import { TEmailNodeImage } from '../../schema'
 import { TRenderNodeProps } from '../types.t'
 

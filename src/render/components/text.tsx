@@ -1,5 +1,4 @@
 import { Column, Row, Text } from '@react-email/components'
-import React from 'react'
 import { TEmailNodeText } from '../../schema'
 import { TEditorComponentRenderWithContentProps, TRenderNodeProps } from '../types.t'
 import { sidePaddingToCombined } from '../utils'
@@ -11,6 +10,7 @@ export function TextNode(props: TRenderNodeProps<TEmailNodeText>) {
     return (
       <Row>
         <Column
+          align={node.align}
           style={{
             padding: sidePaddingToCombined({
               top: node.containerPaddingTop,
@@ -51,6 +51,18 @@ export function TextNode(props: TRenderNodeProps<TEmailNodeText>) {
                 right: node.paddingRight,
                 bottom: node.paddingBottom,
               }),
+
+              borderStyle: node.borderStyle,
+              borderColor: node.borderColor,
+              borderTopWidth: node.borderTopWidth,
+              borderBottomWidth: node.borderBottomWidth,
+              borderLeftWidth: node.borderLeftWidth,
+              borderRightWidth: node.borderRightWidth,
+
+              borderTopLeftRadius: node.radiusTopLeft,
+              borderTopRightRadius: node.radiusTopRight,
+              borderBottomLeftRadius: node.radiusBottomLeft,
+              borderBottomRightRadius: node.radiusBottomRight,
             }}
             {...(children ? { children } : { dangerouslySetInnerHTML: { __html: node.content } })}
           />

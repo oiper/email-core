@@ -23,7 +23,9 @@ export const emailRowSchema = baseSchema.extend({
 
   type: z.literal(emailNodeTypeMap.Row),
   gap: helpers.zPercentageValue.optional().describe('Gap between columns of the row'),
+
   sideGap: helpers.zPercentageValue.optional().describe('Padding around the row'),
+  hideSideGapOnMobile: z.boolean().optional().describe('Hide side gap on mobile'),
 })
 
 export const emailColumnSchema = baseSchema.extend({
@@ -40,9 +42,12 @@ export const emailSectionSchema = baseSchema.extend({
   ...helpers.borderProperties,
   ...helpers.sectionProperties,
   ...helpers.paddingProperties,
-  ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Section),
+  gap: z.number().optional().describe('Gap between the children'),
+
+  sideGap: helpers.zPercentageValue.optional().describe('Padding around the section'),
+  hideSideGapOnMobile: z.boolean().optional().describe('Hide side gap on mobile'),
 })
 
 export const emailHTMLSchema = baseSchema.extend({
@@ -99,6 +104,20 @@ export const emailTextSchema = baseSchema.extend({
   bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
 })
 
+export const emailHeadingSchema = baseSchema.extend({
+  ...helpers.textProperties,
+  ...helpers.widthProperties,
+  ...helpers.borderProperties,
+  ...helpers.paddingProperties,
+  ...helpers.containerPaddingProperties,
+
+  type: z.literal(emailNodeTypeMap.Heading),
+  as: z.enum(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
+
+  content: z.string().describe('Heading content of the component'),
+  bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
+})
+
 export const emailButtonSchema = baseSchema.extend({
   ...helpers.textProperties,
   ...helpers.widthProperties,
@@ -111,23 +130,10 @@ export const emailButtonSchema = baseSchema.extend({
   bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
 })
 
-export const emailHeadingSchema = baseSchema.extend({
-  ...helpers.textProperties,
-  ...helpers.borderProperties,
-  ...helpers.paddingProperties,
-  ...helpers.containerPaddingProperties,
-
-  type: z.literal(emailNodeTypeMap.Heading),
-  as: z.enum(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
-  content: z.string().describe('Heading content of the component'),
-  bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
-})
-
 export const emailImageSchema = baseSchema.extend({
   ...helpers.widthProperties,
   ...helpers.borderProperties,
   ...helpers.paddingProperties,
-  ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Image),
   src: z.string().describe('Image source of the component'),
@@ -137,8 +143,6 @@ export const emailImageSchema = baseSchema.extend({
 
 export const emailSpacerSchema = baseSchema.extend({
   ...helpers.borderProperties,
-  ...helpers.paddingProperties,
-  ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Spacer),
   height: z.number().describe('Height of the spacer'),

@@ -1,15 +1,15 @@
-import * as s from '../schema'
+import * as s from '../schema/core'
 
-export const EmailText = s.emailTextSchema
-export const EmailHeading = s.emailHeadingSchema
-export const EmailButton = s.emailButtonSchema
-export const EmailImage = s.emailImageSchema
-export const EmailSpacer = s.emailSpacerSchema
+export const Text = s.emailTextSchema
+export const Heading = s.emailHeadingSchema
+export const Button = s.emailButtonSchema
+export const Image = s.emailImageSchema
+export const Spacer = s.emailSpacerSchema
 
-export const EmailRow = s.emailRowSchema
-export const EmailColumn = s.emailColumnSchema
-export const EmailSection = s.emailSectionSchema
+export const Row = s.emailRowSchema
+export const Column = s.emailColumnSchema
+export const Section = s.emailSectionSchema
 
-export const EmailHTML = s.emailHTMLSchema
-export const EmailCode = s.emailCodeSchema
-export const EmailMarkdown = s.emailMarkdownSchema
+export const HTML = s.emailHTMLSchema
+export const Code = s.emailCodeSchema
+export const Markdown = s.emailMarkdownSchema

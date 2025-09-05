@@ -1,5 +1,5 @@
 import { Body, Head, Html } from '@react-email/components'
-import React from 'react'
+
 import { RenderNode } from './components/render-node'
 import { TRenderProps } from './types.t'
 import { Wrapper } from './wrapper'

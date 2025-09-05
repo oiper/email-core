@@ -1,6 +1,5 @@
 import * as codeBlockModule from '@react-email/code-block'
 import { CodeBlock, Column, Row } from '@react-email/components'
-import React from 'react'
 import { TEmailNodeCode } from '../../schema'
 import { TRenderNodeProps } from '../types.t'
 import { sidePaddingToCombined, sideRadiusToCombined } from '../utils'
@@ -42,10 +41,10 @@ export function CodeNode(props: TRenderNodeProps<TEmailNodeCode>) {
               borderBottomWidth: node.borderBottomWidth,
 
               borderRadius: sideRadiusToCombined({
-                top: node.radiusTop,
-                left: node.radiusLeft,
-                right: node.radiusRight,
-                bottom: node.radiusBottom,
+                top: node.radiusBottomLeft,
+                left: node.radiusTopLeft,
+                right: node.radiusTopRight,
+                bottom: node.radiusBottomRight,
               }),
 
               ...(node.bgColor ? { backgroundColor: node.bgColor } : {}),
