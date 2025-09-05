@@ -104,6 +104,20 @@ export const emailTextSchema = baseSchema.extend({
   bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
 })
 
+export const emailHeadingSchema = baseSchema.extend({
+  ...helpers.textProperties,
+  ...helpers.widthProperties,
+  ...helpers.borderProperties,
+  ...helpers.paddingProperties,
+  ...helpers.containerPaddingProperties,
+
+  type: z.literal(emailNodeTypeMap.Heading),
+  as: z.enum(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
+
+  content: z.string().describe('Heading content of the component'),
+  bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
+})
+
 export const emailButtonSchema = baseSchema.extend({
   ...helpers.textProperties,
   ...helpers.widthProperties,
@@ -113,18 +127,6 @@ export const emailButtonSchema = baseSchema.extend({
 
   type: z.literal(emailNodeTypeMap.Button),
   content: helpers.zTextString.describe('Text content of the component'),
-  bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
-})
-
-export const emailHeadingSchema = baseSchema.extend({
-  ...helpers.textProperties,
-  ...helpers.borderProperties,
-  ...helpers.paddingProperties,
-  ...helpers.containerPaddingProperties,
-
-  type: z.literal(emailNodeTypeMap.Heading),
-  as: z.enum(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
-  content: z.string().describe('Heading content of the component'),
   bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
 })
 
