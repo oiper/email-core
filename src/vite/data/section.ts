@@ -32,6 +32,7 @@ export const sectionComponents: ComponentRenderer[] = [
       paddingLeft: 30,
       paddingRight: 30,
       paddingBottom: 30,
+      gap: 10,
       children: [
         {
           type: 'HEADING',

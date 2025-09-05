@@ -12,7 +12,11 @@ export function HeadingNode(props: TRenderNodeProps<TEmailNodeHeading>) {
         <Column>
           <Heading
             as={node.as}
-            style={{ textAlign: node.textAlign }}
+            style={{
+              margin: 0,
+
+              textAlign: node.textAlign,
+            }}
             {...(children ? { children } : { dangerouslySetInnerHTML: { __html: node.content } })}
           />
         </Column>

@@ -10,6 +10,7 @@ export const rowColumnComponents: ComponentRenderer[] = [
       paddingLeft: 40,
       paddingRight: 40,
       paddingBottom: 40,
+      sideGap: 10,
       columns: [
         {
           type: 'COLUMN',
@@ -51,14 +52,14 @@ export const rowColumnComponents: ComponentRenderer[] = [
     name: 'Feature Grid Layout',
     node: {
       type: 'ROW',
-      gap: 15,
+      gap: 2,
       columns: [
         {
           type: 'COLUMN',
           children: [
             {
               type: 'IMAGE',
-              src: 'https://placehold.co/220x165/png',
+              src: 'https://placehold.co/160x90/png',
               alt: 'Feature 1',
               radiusTopLeft: 8,
               radiusTopRight: 8,
@@ -69,6 +70,7 @@ export const rowColumnComponents: ComponentRenderer[] = [
               type: 'HEADING',
               as: 'h3',
               content: 'Fast & Reliable',
+              textAlign: 'center',
             },
             {
               type: 'TEXT',
@@ -82,7 +84,7 @@ export const rowColumnComponents: ComponentRenderer[] = [
           children: [
             {
               type: 'IMAGE',
-              src: 'https://placehold.co/190x140/png',
+              src: 'https://placehold.co/160x90/png',
               alt: 'Feature 2',
               radiusTopLeft: 8,
               radiusTopRight: 8,
@@ -93,6 +95,7 @@ export const rowColumnComponents: ComponentRenderer[] = [
               type: 'HEADING',
               as: 'h3',
               content: 'Easy to Use',
+              textAlign: 'center',
             },
             {
               type: 'TEXT',
@@ -106,7 +109,7 @@ export const rowColumnComponents: ComponentRenderer[] = [
           children: [
             {
               type: 'IMAGE',
-              src: 'https://placehold.co/210x160/png',
+              src: 'https://placehold.co/160x90/png',
               alt: 'Feature 3',
               radiusTopLeft: 8,
               radiusTopRight: 8,
@@ -117,6 +120,7 @@ export const rowColumnComponents: ComponentRenderer[] = [
               type: 'HEADING',
               as: 'h3',
               content: 'Secure & Private',
+              textAlign: 'center',
             },
             {
               type: 'TEXT',
