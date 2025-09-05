@@ -40,10 +40,10 @@ export const borderStyleProperties = {
 }
 
 export const borderRadiusProperties = {
-  radiusLeft: z.number().optional().describe('Border radius left of the component'),
-  radiusRight: z.number().optional().describe('Border radius right of the component'),
-  radiusTop: z.number().optional().describe('Border radius top of the component'),
-  radiusBottom: z.number().optional().describe('Border radius bottom of the component'),
+  radiusTopLeft: z.number().optional().describe('Border radius left of the component'),
+  radiusTopRight: z.number().optional().describe('Border radius right of the component'),
+  radiusBottomLeft: z.number().optional().describe('Border radius top of the component'),
+  radiusBottomRight: z.number().optional().describe('Border radius bottom of the component'),
 }
 
 export const borderProperties = {

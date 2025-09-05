@@ -1,5 +1,4 @@
 import { Section } from '@react-email/components'
-import React from 'react'
 import { TEmailNodeSection } from '../../schema'
 import { TRenderNodeProps } from '../types.t'
 import { RenderNode } from './render-node'
@@ -13,6 +12,11 @@ export function SectionNode(props: TRenderNodeProps<TEmailNodeSection>) {
         marginLeft: 'auto',
         marginRight: 'auto',
         maxWidth: node.maxWidth ?? config.maxWidth,
+
+        paddingTop: node.paddingTop,
+        paddingLeft: node.paddingLeft,
+        paddingRight: node.paddingRight,
+        paddingBottom: node.paddingBottom,
       }}
     >
       <ControlEditorWrapper {...props}>

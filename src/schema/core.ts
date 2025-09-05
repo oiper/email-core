@@ -40,7 +40,6 @@ export const emailSectionSchema = baseSchema.extend({
   ...helpers.borderProperties,
   ...helpers.sectionProperties,
   ...helpers.paddingProperties,
-  ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Section),
 })

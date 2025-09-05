@@ -1,7 +1,8 @@
-import { PageButton } from './button'
-import { PageImage } from './image'
+import { buttonComponents } from './data/button'
+import { imageComponents } from './data/image'
+import { Renderer } from './renderer'
 
 export const componentPages = [
-  { path: '/image', element: <PageImage /> },
-  { path: '/button', element: <PageButton /> },
+  { path: '/image', element: <Renderer data={imageComponents} /> },
+  { path: '/button', element: <Renderer data={buttonComponents} /> },
 ]

@@ -11,7 +11,6 @@ export function RootLayout() {
           padding: '1rem',
           backgroundColor: '#fff',
           borderBottom: '1px solid #ccc',
-          marginBottom: '2rem',
         }}
       >
         <div
@@ -31,6 +30,7 @@ export function RootLayout() {
           >
             Home
           </Link>
+
           {componentPages.map(({ path }) => (
             <Link
               key={path}
@@ -49,7 +49,7 @@ export function RootLayout() {
           ))}
         </div>
       </nav>
-      <div style={{ padding: '0 1rem' }}>
+      <div style={{ padding: '1rem' }}>
         <Outlet />
       </div>
     </div>

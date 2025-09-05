@@ -1,5 +1,4 @@
 import { Button, Column, Row } from '@react-email/components'
-import React from 'react'
 import { TEmailNodeButton } from '../../schema'
 import { spreadTextStyleProperties } from '../helpers/spread-props'
 import { TEditorComponentRenderWithContentProps, TRenderNodeProps } from '../types.t'
@@ -59,10 +58,10 @@ export function ButtonNode(props: TRenderNodeProps<TEmailNodeButton>) {
                     bottom: node.paddingBottom,
                   }),
                   borderRadius: sideRadiusToCombined({
-                    top: node.radiusTop,
-                    left: node.radiusLeft,
-                    right: node.radiusRight,
-                    bottom: node.radiusBottom,
+                    top: node.radiusBottomLeft,
+                    left: node.radiusTopLeft,
+                    right: node.radiusTopRight,
+                    bottom: node.radiusBottomRight,
                   }),
 
                   display: node.width ? 'block' : 'inline-block',
