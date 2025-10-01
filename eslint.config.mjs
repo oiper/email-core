@@ -151,10 +151,9 @@ export default [
   },
 
   {
-    files: ['./app/**'],
+    files: ['./src/__lab__/**'],
     rules: {
-      'import/no-default-export': 0,
-      'check-file/folder-naming-convention': [2, { '**/*': 'NEXT_JS_APP_ROUTER_CASE' }],
+      'check-file/folder-naming-convention': 0,
     },
   },
 

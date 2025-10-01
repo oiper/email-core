@@ -1,6 +1,5 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src"],
   "compilerOptions": {
     "jsx": "react-jsx",
     "module": "ESNext",
@@ -10,5 +9,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "resolveJsonModule": true
-  }
+  },
+  "include": ["./src"]
 }
