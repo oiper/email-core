@@ -1,76 +1,86 @@
 {
   "name": "@oiper/email-core",
-  "version": "0.0.8",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "version": "1.0.0",
+  "sideEffects": false,
   "scripts": {
-    "prepare": "husky",
-    "test": "bun test",
-    "dev": "npmize dev",
-    "build": "zod2md && npmize build",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "fix": "eslint . --fix",
     "tc": "tsc --noEmit --watch",
-    "start": "run ./src/index.ts",
+    "exports": "tsx ./write-exports.ts",
+    "build": "zod2md && tsdown --config ./tsdown.config.ts",
+    "dev": "concurrently --names \"R,T\" --prefix-colors \"blue.dim,magenta.dim\" \"tsdown --config ./tsdown.config.ts --watch\" \"tsc --noEmit --watch\"",
+    "start": "tsx --watch ./src/index.ts",
+    "live": "tsx ./dev/live-template.tsx",
+    "live:dev": "run ./dev/live-template.tsx",
     "vite:dev": "vite",
     "vite:build": "vite build",
     "vite:preview": "vite preview",
-    "lint": "tsc --noEmit && eslint .",
-    "lint:fix": "eslint . --fix",
-    "lint:format": "prettier . --write",
-    "live": "tsx ./dev/live-template.tsx",
-    "live:dev": "run ./dev/live-template.tsx",
     "pub": "npm run lint && npm run test && npm run build && npm publish --access public"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/index.d.mts",
+        "./dist/index.d.cts"
+      ]
+    }
+  },
   "dependencies": {
-    "@react-email/components": "^0.5.7",
     "parse5": "^8.0.0",
     "prismjs": "^1.30.0",
-    "react": "^19.1.5",
-    "react-dom": "^19.1.5",
-    "zod": "^4.3.6",
     "zod-to-json-schema": "^3.25.1"
+  },
+  "peerDependencies": {
+    "@react-email/code-block": "*",
+    "@react-email/components": "*",
+    "react": "*",
+    "react-dom": "*",
+    "zod": "*"
   },
   "devDependencies": {
     "@eslint/compat": "^1.4.1",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.39.2",
-    "@types/bun": "^1.3.8",
-    "@types/express": "^5.0.6",
+    "@react-email/code-block": "^0.2.1",
+    "@react-email/components": "^1.0.7",
+    "@types/node": "^24.10.11",
     "@types/prismjs": "^1.26.5",
     "@types/react": "^19.2.13",
     "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
     "@vitejs/plugin-react-swc": "^4.2.3",
+    "concurrently": "^9.2.1",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-check-file": "^3.3.1",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.5",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-func": "^0.1.18",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "express": "^5.2.1",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
-    "morphdom": "^2.7.8",
-    "npmize": "^1.1.11",
     "prettier": "^3.8.1",
     "prettier-plugin-organize-imports": "^4.3.0",
+    "prismjs": "^1.30.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "react-router": "^7.13.0",
-    "react-shadow": "^20.6.0",
+    "tsdown": "^0.15.12",
+    "tslib": "^2.8.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.54.0",
     "vite": "^7.3.1",
+    "vitest": "^4.0.18",
+    "zod": "^4.3.6",
+    "zod-to-json-schema": "^3.25.1",
     "zod2md": "^0.2.5"
-  },
-  "overrides": {
-    "zod-to-json-schema": {
-      "zod": "^4.3.6"
-    }
-  },
-  "lint-staged": {
-    "*": [
-      "eslint --fix --max-warnings 5"
-    ]
   }
 }

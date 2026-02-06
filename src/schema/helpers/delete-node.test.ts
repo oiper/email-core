@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'bun:test'
+import { beforeEach, describe, expect, it } from 'vitest'
 import { TEmailNodeColumn, TEmailNodeRow, TEmailNodeSection, TEmailNodeUnion } from '../types.t'
 import { deleteNodeFromBodyByRef } from './delete-node'
 
