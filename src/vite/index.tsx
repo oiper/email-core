@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import { App } from './app'
 import { componentPages } from './constants'
 import { RootLayout } from './layout'
+import { Playground } from './playground'
 
 const root = document.getElementById('root')
 
@@ -14,6 +15,7 @@ ReactDOM.createRoot(root!).render(
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<App />} />
+          <Route path="/playground" element={<Playground />} />
 
           {componentPages.map(({ path, element }) => (
             <Route
