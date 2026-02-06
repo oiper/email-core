@@ -15,7 +15,7 @@ const baseSchema = z.object({
   meta: z.record(z.string(), z.unknown()).optional().describe('Meta data of the component'),
 })
 
-export const emailRowSchema = baseSchema.extend({
+export const emailRowSchemaBase = baseSchema.extend({
   ...helpers.borderProperties,
   ...helpers.sectionProperties,
   ...helpers.paddingProperties,
@@ -38,7 +38,7 @@ export const emailColumnSchema = baseSchema.extend({
   vAlign: helpers.verticalAlignment.optional().describe('Vertical alignment of the column'),
 })
 
-export const emailSectionSchema = baseSchema.extend({
+export const emailSectionSchemaBase = baseSchema.extend({
   ...helpers.borderProperties,
   ...helpers.sectionProperties,
   ...helpers.paddingProperties,
@@ -149,6 +149,28 @@ export const emailSpacerSchema = baseSchema.extend({
   bgColor: helpers.hexColorSchema.optional().describe('Background color of the spacer'),
 })
 
+export const emailSectionSchema = emailSectionSchemaBase.extend({
+  children: z
+    .array(z.lazy(() => zodEmailNodeSchema))
+    .describe(
+      `Children of the section. Can be any of ${Object.values(emailNodeTypeMap).join(', ')}`
+    ),
+})
+
+export const emailRowSchema = emailRowSchemaBase.extend({
+  columns: z
+    .array(
+      emailColumnSchema.extend({
+        children: z
+          .array(z.lazy(() => zodEmailNodeSchema))
+          .describe(
+            `Children of the column. Can be any of ${Object.values(emailNodeTypeMap).join(', ')}`
+          ),
+      })
+    )
+    .describe(`Columns of the row. Must be an array of ${emailNodeTypeMap.Column}`),
+})
+
 export const zodEmailNodeSchema: z.ZodType<TEmailNodeUnion> = z.lazy(() => {
   return z.discriminatedUnion('type', [
     emailHTMLSchema,
@@ -162,26 +184,8 @@ export const zodEmailNodeSchema: z.ZodType<TEmailNodeUnion> = z.lazy(() => {
     emailImageSchema,
     emailSpacerSchema,
 
-    emailSectionSchema.extend({
-      children: z
-        .array(zodEmailNodeSchema)
-        .describe(
-          `Children of the section. Can be any of ${Object.values(emailNodeTypeMap).join(', ')}`
-        ),
-    }),
+    emailSectionSchema,
 
-    emailRowSchema.extend({
-      columns: z
-        .array(
-          emailColumnSchema.extend({
-            children: z
-              .array(zodEmailNodeSchema)
-              .describe(
-                `Children of the column. Can be any of ${Object.values(emailNodeTypeMap).join(', ')}`
-              ),
-          })
-        )
-        .describe(`Columns of the row. Must be an array of ${emailNodeTypeMap.Column}`),
-    }),
+    emailRowSchema,
   ])
 })

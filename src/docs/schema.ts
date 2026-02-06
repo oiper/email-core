@@ -6,9 +6,9 @@ export const Button = s.emailButtonSchema
 export const Image = s.emailImageSchema
 export const Spacer = s.emailSpacerSchema
 
-export const Row = s.emailRowSchema
+export const Row = s.emailRowSchemaBase
 export const Column = s.emailColumnSchema
-export const Section = s.emailSectionSchema
+export const Section = s.emailSectionSchemaBase
 
 export const HTML = s.emailHTMLSchema
 export const Code = s.emailCodeSchema
