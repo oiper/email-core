@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "target": "ES2022",
+    "module": "ESNext",
+    "declaration": true,
+    "outDir": "dist",
     "jsx": "react-jsx",
-    "target": "ESNext",
+    "jsxImportSource": "react",
+    "strict": true,
+    "noEmit": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "declaration": true,
-    "strict": true
+    "paths": { "@/*": ["./src/*"] }
   },
   "include": ["src"]
 }
