@@ -34,7 +34,11 @@ function Editor(props: TEditorComponentProps) {
       children
     )
 
-  return <div itemType={`<---${node.type}@${mode}#${paths.join('.')}--->`}>{emailContent}</div>
+  return (
+    <div itemType={`<---${node.type}@${mode}#${paths.join('.')}--->`}>
+      {emailContent}
+    </div>
+  )
 }
 
 app.get('/', async (_, res) => {
@@ -147,7 +151,11 @@ app.get('/static', async (_, res) => {
       </Button>
     )
   )
-  res.send(renderToStaticMarkup(<Button dangerouslySetInnerHTML={{ __html: 'HELLO' }} />))
+  res.send(
+    renderToStaticMarkup(
+      <Button dangerouslySetInnerHTML={{ __html: 'HELLO' }} />
+    )
+  )
 })
 
 app.listen(3000, () => {

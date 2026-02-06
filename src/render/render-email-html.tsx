@@ -1,6 +1,10 @@
 import { Options, render } from '@react-email/components'
 
-import { renderToStaticMarkup, renderToString, ServerOptions } from 'react-dom/server'
+import {
+  renderToStaticMarkup,
+  renderToString,
+  ServerOptions,
+} from 'react-dom/server'
 import { RenderEmail, TRenderProps } from '../render'
 
 /**
@@ -21,7 +25,10 @@ export function renderEmailHtml(input: TRenderProps, options?: Options) {
  *
  * NOTE: This is using the react-dom/server `renderToStaticMarkup` function.
  */
-export function renderEmailServerHtml(input: TRenderProps, options?: ServerOptions) {
+export function renderEmailServerHtml(
+  input: TRenderProps,
+  options?: ServerOptions
+) {
   return renderToStaticMarkup(<RenderEmail {...input} />, options)
 }
 
@@ -34,6 +41,9 @@ export function renderEmailServerHtml(input: TRenderProps, options?: ServerOptio
  *
  * NOTE: This is using the react-dom/server `renderToString` function.
  */
-export function renderEmailClientHtml(input: TRenderProps, options?: ServerOptions) {
+export function renderEmailClientHtml(
+  input: TRenderProps,
+  options?: ServerOptions
+) {
   return renderToString(<RenderEmail {...input} />, options)
 }

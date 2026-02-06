@@ -1,6 +1,9 @@
 import { Column, Heading, Row } from '@react-email/components'
 import { TEmailNodeHeading } from '../../schema'
-import { TEditorComponentRenderWithContentProps, TRenderNodeProps } from '../types.t'
+import {
+  TEditorComponentRenderWithContentProps,
+  TRenderNodeProps,
+} from '../types.t'
 import { sidePaddingToCombined } from '../utils'
 
 export function HeadingNode(props: TRenderNodeProps<TEmailNodeHeading>) {
@@ -65,7 +68,9 @@ export function HeadingNode(props: TRenderNodeProps<TEmailNodeHeading>) {
               borderBottomLeftRadius: node.radiusBottomLeft,
               borderBottomRightRadius: node.radiusBottomRight,
             }}
-            {...(children ? { children } : { dangerouslySetInnerHTML: { __html: node.content } })}
+            {...(children
+              ? { children }
+              : { dangerouslySetInnerHTML: { __html: node.content } })}
           />
         </Column>
       </Row>

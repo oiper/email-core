@@ -34,7 +34,8 @@ export function RootLayout() {
             fontWeight: 'bold',
             borderRadius: '6px',
             color: location.pathname === '/' ? '#007bff' : '#333',
-            backgroundColor: location.pathname === '/' ? '#e7f3ff' : 'transparent',
+            backgroundColor:
+              location.pathname === '/' ? '#e7f3ff' : 'transparent',
           }}
         >
           <svg
@@ -45,7 +46,11 @@ export function RootLayout() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></g>
             <g id="SVGRepo_iconCarrier">
               <path
                 d="M12 15L12 18"

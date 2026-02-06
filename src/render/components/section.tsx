@@ -31,7 +31,11 @@ export function SectionNode(props: TRenderNodeProps<TEmailNodeSection>) {
             <ControlEditorWrapper {...props}>
               {node.children.map((child, i) => (
                 <Fragment key={i}>
-                  <RenderNode {...props} node={child} paths={[...props.paths, ['children', i]]} />
+                  <RenderNode
+                    {...props}
+                    node={child}
+                    paths={[...props.paths, ['children', i]]}
+                  />
 
                   {i < node.children.length - 1 && node.gap && (
                     <Row>

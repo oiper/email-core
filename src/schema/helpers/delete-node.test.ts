@@ -1,5 +1,10 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { TEmailNodeColumn, TEmailNodeRow, TEmailNodeSection, TEmailNodeUnion } from '../types.t'
+import {
+  TEmailNodeColumn,
+  TEmailNodeRow,
+  TEmailNodeSection,
+  TEmailNodeUnion,
+} from '../types.t'
 import { deleteNodeFromBodyByRef } from './delete-node'
 
 describe('deleteNodeFromBodyByRef', () => {
@@ -118,7 +123,10 @@ describe('deleteNodeFromBodyByRef', () => {
 
     it('should not modify body if reference node is not found', () => {
       const body = [textNode1, buttonNode]
-      const unknownNode = { type: 'TEXT', content: 'Unknown' } as TEmailNodeUnion
+      const unknownNode = {
+        type: 'TEXT',
+        content: 'Unknown',
+      } as TEmailNodeUnion
       deleteNodeFromBodyByRef(body, unknownNode)
 
       expect(body).toHaveLength(2)
@@ -253,7 +261,10 @@ describe('deleteNodeFromBodyByRef', () => {
 
   describe('Complex nested structure deletion', () => {
     it('should delete nodes from complex nested structure', () => {
-      const deepTextNode = { type: 'TEXT', content: 'Deep text' } as TEmailNodeUnion
+      const deepTextNode = {
+        type: 'TEXT',
+        content: 'Deep text',
+      } as TEmailNodeUnion
       const deepColumn: TEmailNodeColumn = {
         type: 'COLUMN',
         children: [deepTextNode],
@@ -297,7 +308,10 @@ describe('deleteNodeFromBodyByRef', () => {
     })
 
     it('should handle rows within sections within columns', () => {
-      const innerText = { type: 'TEXT', content: 'Inner text' } as TEmailNodeUnion
+      const innerText = {
+        type: 'TEXT',
+        content: 'Inner text',
+      } as TEmailNodeUnion
       const innerColumn: TEmailNodeColumn = {
         type: 'COLUMN',
         children: [innerText],
@@ -371,7 +385,10 @@ describe('deleteNodeFromBodyByRef', () => {
     })
 
     it('should handle deletion of non-existent nodes gracefully', () => {
-      const nonExistentNode = { type: 'TEXT', content: 'Does not exist' } as TEmailNodeUnion
+      const nonExistentNode = {
+        type: 'TEXT',
+        content: 'Does not exist',
+      } as TEmailNodeUnion
       const body = [section]
       const originalLength = section.children.length
 
@@ -421,7 +438,10 @@ describe('deleteNodeFromBodyByRef', () => {
     })
 
     it('should handle very deeply nested structures', () => {
-      const deepestNode: TEmailNodeUnion = { type: 'TEXT', content: 'Deep node' } as TEmailNodeUnion
+      const deepestNode: TEmailNodeUnion = {
+        type: 'TEXT',
+        content: 'Deep node',
+      } as TEmailNodeUnion
       let currentLevel: TEmailNodeUnion = deepestNode
 
       for (let i = 0; i < 10; i++) {
@@ -622,7 +642,10 @@ describe('deleteNodeFromBodyByRef', () => {
     })
 
     it('should handle maximum practical nesting depth', () => {
-      const deepestNode: TEmailNodeUnion = { type: 'IMAGE', src: 'deep.jpg' } as TEmailNodeUnion
+      const deepestNode: TEmailNodeUnion = {
+        type: 'IMAGE',
+        src: 'deep.jpg',
+      } as TEmailNodeUnion
       let current: TEmailNodeUnion = deepestNode
 
       for (let i = 0; i < 50; i++) {

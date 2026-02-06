@@ -167,7 +167,10 @@ describe('getPathFromBodyByRef', () => {
   it('should find reference in section children - nested deeper', () => {
     const reference = createTextNode('target')
     const innerSection = createSectionNode([createTextNode('first'), reference])
-    const outerSection = createSectionNode([createTextNode('outer'), innerSection])
+    const outerSection = createSectionNode([
+      createTextNode('outer'),
+      innerSection,
+    ])
     const body = [outerSection]
 
     const result = getPathFromBodyByRef(body, reference)
@@ -176,7 +179,11 @@ describe('getPathFromBodyByRef', () => {
 
   it('should find reference in column children', () => {
     const reference = createTextNode('target')
-    const column = createColumnNode([createTextNode('first'), reference, createTextNode('last')])
+    const column = createColumnNode([
+      createTextNode('first'),
+      reference,
+      createTextNode('last'),
+    ])
     const body = [column]
 
     const result = getPathFromBodyByRef(body, reference)
@@ -185,7 +192,10 @@ describe('getPathFromBodyByRef', () => {
 
   it('should find reference in row columns', () => {
     const reference = createColumnNode([createTextNode('target')])
-    const row = createRowNode([createColumnNode([createTextNode('first')]), reference])
+    const row = createRowNode([
+      createColumnNode([createTextNode('first')]),
+      reference,
+    ])
     const body = [row]
 
     const result = getPathFromBodyByRef(body, reference)
@@ -223,10 +233,19 @@ describe('getPathFromBodyByRef', () => {
       createTextNode('section-end'),
     ])
 
-    const body = [createTextNode('body-start'), section, createTextNode('body-end')]
+    const body = [
+      createTextNode('body-start'),
+      section,
+      createTextNode('body-end'),
+    ]
 
     const result = getPathFromBodyByRef(body, reference)
-    expect(result).toEqual([[1], ['children', 1], ['columns', 1], ['children', 1]])
+    expect(result).toEqual([
+      [1],
+      ['children', 1],
+      ['columns', 1],
+      ['children', 1],
+    ])
   })
 
   it('should handle multiple levels of sections', () => {
@@ -234,7 +253,11 @@ describe('getPathFromBodyByRef', () => {
 
     const innerSection = createSectionNode([
       createTextNode('inner-1'),
-      createSectionNode([createTextNode('deep-1'), reference, createTextNode('deep-2')]),
+      createSectionNode([
+        createTextNode('deep-1'),
+        reference,
+        createTextNode('deep-2'),
+      ]),
       createTextNode('inner-2'),
     ])
 
@@ -247,7 +270,12 @@ describe('getPathFromBodyByRef', () => {
     const body = [outerSection]
 
     const result = getPathFromBodyByRef(body, reference)
-    expect(result).toEqual([[0], ['children', 1], ['children', 1], ['children', 1]])
+    expect(result).toEqual([
+      [0],
+      ['children', 1],
+      ['children', 1],
+      ['children', 1],
+    ])
   })
 
   it('should handle multiple levels of rows and columns', () => {
@@ -262,12 +290,21 @@ describe('getPathFromBodyByRef', () => {
       createTextNode('inner-col-2'),
     ])
 
-    const outerRow = createRowNode([createColumnNode([createTextNode('outer-col-1')]), innerColumn])
+    const outerRow = createRowNode([
+      createColumnNode([createTextNode('outer-col-1')]),
+      innerColumn,
+    ])
 
     const body = [outerRow]
 
     const result = getPathFromBodyByRef(body, reference)
-    expect(result).toEqual([[0], ['columns', 1], ['children', 1], ['columns', 1], ['children', 0]])
+    expect(result).toEqual([
+      [0],
+      ['columns', 1],
+      ['children', 1],
+      ['columns', 1],
+      ['children', 0],
+    ])
   })
 
   it('should find the first occurrence when multiple identical references exist', () => {
@@ -346,7 +383,12 @@ describe('getPathFromBodyByRef', () => {
     const body = [section]
 
     const result = getPathFromBodyByRef(body, reference)
-    expect(result).toEqual([[0], ['children', 0], ['columns', 0], ['children', 2]])
+    expect(result).toEqual([
+      [0],
+      ['children', 0],
+      ['columns', 0],
+      ['children', 2],
+    ])
   })
 
   it('should handle very deep nesting', () => {
@@ -516,9 +558,15 @@ describe('getPathFromBodyByRef', () => {
     const target1 = createTextNode('target1')
     const target2 = createTextNode('target2')
 
-    const section1 = createSectionNode([createTextNode('section1-text'), target1])
+    const section1 = createSectionNode([
+      createTextNode('section1-text'),
+      target1,
+    ])
 
-    const section2 = createSectionNode([createTextNode('section2-text'), target2])
+    const section2 = createSectionNode([
+      createTextNode('section2-text'),
+      target2,
+    ])
 
     const body = [section1, section2]
 
@@ -558,7 +606,12 @@ describe('getPathFromBodyByRef', () => {
     const body = [section]
 
     const result = getPathFromBodyByRef(body, reference)
-    expect(result).toEqual([[0], ['children', 1], ['columns', 1], ['children', 1]])
+    expect(result).toEqual([
+      [0],
+      ['children', 1],
+      ['columns', 1],
+      ['children', 1],
+    ])
   })
 
   it('should return early when reference found (performance test)', () => {
@@ -570,7 +623,9 @@ describe('getPathFromBodyByRef', () => {
         createTextNode('should-not-search-here-1'),
         createTextNode('should-not-search-here-2'),
       ]),
-      createRowNode([createColumnNode([createTextNode('should-not-search-here-3')])]),
+      createRowNode([
+        createColumnNode([createTextNode('should-not-search-here-3')]),
+      ]),
     ]
 
     const result = getPathFromBodyByRef(body, reference)
@@ -702,7 +757,11 @@ describe('getPathFromBodyByRef', () => {
       createSectionNode([createSectionNode([createTextNode('very-deep')])]),
     ])
 
-    const section = createSectionNode([deepNested, createTextNode('shallow'), reference])
+    const section = createSectionNode([
+      deepNested,
+      createTextNode('shallow'),
+      reference,
+    ])
 
     const body = [section]
 
@@ -719,7 +778,10 @@ describe('getPathFromBodyByRef', () => {
     ])
 
     const contentRow = createRowNode([
-      createColumnNode([createTextNode('Left column content'), createImageNode('left-image')]),
+      createColumnNode([
+        createTextNode('Left column content'),
+        createImageNode('left-image'),
+      ]),
       createColumnNode([
         createHeadingNode('Main Content'),
         createTextNode('Some text content'),
@@ -741,24 +803,36 @@ describe('getPathFromBodyByRef', () => {
 
   describe('Extreme Edge Cases and Stress Tests (100 additional cases)', () => {
     it('should handle empty body with null reference', () => {
-      const result = getPathFromBodyByRef([], null as unknown as TEmailNodeUnion)
+      const result = getPathFromBodyByRef(
+        [],
+        null as unknown as TEmailNodeUnion
+      )
       expect(result).toBeNull()
     })
 
     it('should handle empty body with undefined reference', () => {
-      const result = getPathFromBodyByRef([], undefined as unknown as TEmailNodeUnion)
+      const result = getPathFromBodyByRef(
+        [],
+        undefined as unknown as TEmailNodeUnion
+      )
       expect(result).toBeNull()
     })
 
     it('should handle null body array', () => {
       const reference = createTextNode('test')
-      const result = getPathFromBodyByRef(null as unknown as TEmailNodeUnion[], reference)
+      const result = getPathFromBodyByRef(
+        null as unknown as TEmailNodeUnion[],
+        reference
+      )
       expect(result).toBeNull()
     })
 
     it('should handle undefined body array', () => {
       const reference = createTextNode('test')
-      const result = getPathFromBodyByRef(undefined as unknown as TEmailNodeUnion[], reference)
+      const result = getPathFromBodyByRef(
+        undefined as unknown as TEmailNodeUnion[],
+        reference
+      )
       expect(result).toBeNull()
     })
 
@@ -809,7 +883,10 @@ describe('getPathFromBodyByRef', () => {
 
     it('should handle row with null columns array', () => {
       const reference = createTextNode('test')
-      const row = { type: 'ROW' as const, columns: null as unknown as TEmailNodeColumn[] }
+      const row = {
+        type: 'ROW' as const,
+        columns: null as unknown as TEmailNodeColumn[],
+      }
       const body = [row, reference]
       const result = getPathFromBodyByRef(body, reference)
       expect(result).toEqual([[1]])
@@ -829,8 +906,14 @@ describe('getPathFromBodyByRef', () => {
     it('should handle deeply nested null/undefined arrays', () => {
       const reference = createTextNode('deep')
       const deepSection = createSectionNode([
-        { type: 'SECTION' as const, children: null as unknown as TEmailNodeUnion[] },
-        { type: 'SECTION' as const, children: undefined as unknown as TEmailNodeUnion[] },
+        {
+          type: 'SECTION' as const,
+          children: null as unknown as TEmailNodeUnion[],
+        },
+        {
+          type: 'SECTION' as const,
+          children: undefined as unknown as TEmailNodeUnion[],
+        },
         createSectionNode([reference]),
       ])
       const body = [deepSection]
@@ -940,7 +1023,10 @@ describe('getPathFromBodyByRef', () => {
     })
 
     it('should handle nodes missing required properties', () => {
-      const reference = { type: 'TEXT' as const, content: 'test' } as unknown as TEmailNodeUnion
+      const reference = {
+        type: 'TEXT' as const,
+        content: 'test',
+      } as unknown as TEmailNodeUnion
       const body = [createTextNode('normal'), reference]
       const result = getPathFromBodyByRef(body, reference)
       expect(result).toEqual([[1]])
@@ -1145,7 +1231,12 @@ describe('getPathFromBodyByRef', () => {
 
       const body = [level1Section]
       const result = getPathFromBodyByRef(body, reference)
-      expect(result).toEqual([[0], ['children', 100], ['children', 100], ['children', 100]])
+      expect(result).toEqual([
+        [0],
+        ['children', 100],
+        ['children', 100],
+        ['children', 100],
+      ])
     })
 
     it('should handle node with prototype pollution attempts', () => {
@@ -1199,7 +1290,11 @@ describe('getPathFromBodyByRef', () => {
       for (let i = 0; i < 100; i++) {
         duplicates.push(createTextNode(content))
       }
-      const section = createSectionNode([...duplicates, reference, ...duplicates])
+      const section = createSectionNode([
+        ...duplicates,
+        reference,
+        ...duplicates,
+      ])
       const body = [section]
       const result = getPathFromBodyByRef(body, reference)
       expect(result).toEqual([[0], ['children', 100]])
@@ -1245,7 +1340,11 @@ describe('getPathFromBodyByRef', () => {
       const body = [
         createSectionNode([createTextNode('other'), reference]),
         createRowNode([createColumnNode([reference, createTextNode('other')])]),
-        createColumnNode([createTextNode('first'), createTextNode('second'), reference]),
+        createColumnNode([
+          createTextNode('first'),
+          createTextNode('second'),
+          reference,
+        ]),
       ]
       const result1 = getPathFromBodyByRef([body[0]], reference)
       const result2 = getPathFromBodyByRef([body[1]], reference)
@@ -1293,7 +1392,10 @@ describe('getPathFromBodyByRef', () => {
           createRowNode([]),
           createRowNode([
             createColumnNode([]),
-            createColumnNode([createSectionNode([]), createSectionNode([reference])]),
+            createColumnNode([
+              createSectionNode([]),
+              createSectionNode([reference]),
+            ]),
           ]),
         ]),
       ]
@@ -1362,7 +1464,10 @@ describe('getPathFromBodyByRef', () => {
       }
       const rightBranch = createTextNode('shallow-right')
       const body = [
-        createRowNode([createColumnNode([leftBranch]), createColumnNode([rightBranch])]),
+        createRowNode([
+          createColumnNode([leftBranch]),
+          createColumnNode([rightBranch]),
+        ]),
       ]
       const result = getPathFromBodyByRef(body, reference)
       const expectedPath = [[0], ['columns', 0], ['children', 0]]
@@ -1412,7 +1517,8 @@ describe('getPathFromBodyByRef', () => {
     it('should handle pathological case with maximum nesting and maximum width', () => {
       const reference = createTextNode('pathological')
       let current = createSectionNode([])
-      const children = (current as unknown as { children: TEmailNodeUnion[] }).children
+      const children = (current as unknown as { children: TEmailNodeUnion[] })
+        .children
       for (let i = 0; i < 100; i++) {
         children.push(createTextNode(`wide-${i}`))
       }
@@ -1479,7 +1585,9 @@ describe('getPathFromBodyByRef', () => {
         const section = createSectionNode([])
         for (let j = 0; j < 50; j++) {
           if (j === 25 && i === 5) {
-            ;(section as unknown as { children: TEmailNodeUnion[] }).children.push(
+            ;(
+              section as unknown as { children: TEmailNodeUnion[] }
+            ).children.push(
               createRowNode([
                 createColumnNode([createTextNode('decoy')]),
                 createColumnNode([
@@ -1492,7 +1600,9 @@ describe('getPathFromBodyByRef', () => {
               ])
             )
           } else {
-            ;(section as unknown as { children: TEmailNodeUnion[] }).children.push(
+            ;(
+              section as unknown as { children: TEmailNodeUnion[] }
+            ).children.push(
               createRowNode([
                 createColumnNode([createTextNode(`content-${i}-${j}-1`)]),
                 createColumnNode([createTextNode(`content-${i}-${j}-2`)]),

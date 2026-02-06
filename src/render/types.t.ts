@@ -72,9 +72,13 @@ export type TEmailRenderProjectConfig = {
   maxWidth: string
 }
 
-export type TEditorComponentRenderWithContentProps = Prettify<{ children?: React.ReactNode }>
+export type TEditorComponentRenderWithContentProps = Prettify<{
+  children?: React.ReactNode
+}>
 
-export type TEditorRowGetColumnPropsWrapper = (getColumnProps: TEditorGetColumnProps) => ReactNode
+export type TEditorRowGetColumnPropsWrapper = (
+  getColumnProps: TEditorGetColumnProps
+) => ReactNode
 export type TEditorGetColumnProps = (
   props: Omit<TEditorControllerProps<TEmailNodeColumn>, 'children'>
 ) => Prettify<React.ComponentProps<typeof Column>>

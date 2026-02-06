@@ -8,7 +8,10 @@ import { RenderNode } from './render-node'
 export function RowNode(props: TRenderNodeProps<TEmailNodeRow>) {
   const { ControlEditorWrapper, node } = props
 
-  const totalWidth = node.columns.reduce((acc, child) => acc + (child.width || 1), 0)
+  const totalWidth = node.columns.reduce(
+    (acc, child) => acc + (child.width || 1),
+    0
+  )
   const totalGap = (node.gap || 0) * (node.columns.length - 1)
   const availableWidth = 100 - (node.sideGap || 0) * 2 - totalGap
 
@@ -26,7 +29,8 @@ export function RowNode(props: TRenderNodeProps<TEmailNodeRow>) {
         {node.columns.map((column, i) => {
           const paths = [...props.paths, ['columns', i]]
           const controllerProps = { ...props, node: column, paths }
-          const { style, valign, children, ...columnProps } = getColumnProps(controllerProps)
+          const { style, valign, children, ...columnProps } =
+            getColumnProps(controllerProps)
 
           return (
             <Fragment key={i}>

@@ -9,7 +9,12 @@ export function ColumnNode(props: TRenderNodeProps<TEmailNodeColumn>) {
     <ControlEditorWrapper {...props}>
       {node.children.map((child, i) => {
         return (
-          <RenderNode key={i} {...props} node={child} paths={[...props.paths, ['children', i]]} />
+          <RenderNode
+            key={i}
+            {...props}
+            node={child}
+            paths={[...props.paths, ['children', i]]}
+          />
         )
       })}
     </ControlEditorWrapper>

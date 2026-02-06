@@ -9,7 +9,10 @@ type Parse5Node = {
   }
 }
 
-export function hasForbiddenTags(htmlText: string, forbiddenTags: string[]): boolean {
+export function hasForbiddenTags(
+  htmlText: string,
+  forbiddenTags: string[]
+): boolean {
   const document = parseFragment(htmlText) as Parse5Node
   const tagsSet = new Set(forbiddenTags.map((tag) => tag.toLowerCase()))
 

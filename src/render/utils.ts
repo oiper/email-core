@@ -15,9 +15,12 @@ export function sideRadiusToCombined({
   right: unknown
   bottom: unknown
 }) {
-  return [parsePxValue(top), parsePxValue(right), parsePxValue(bottom), parsePxValue(left)].join(
-    ' '
-  )
+  return [
+    parsePxValue(top),
+    parsePxValue(right),
+    parsePxValue(bottom),
+    parsePxValue(left),
+  ].join(' ')
 }
 
 export function sidePaddingToCombined({
@@ -31,7 +34,10 @@ export function sidePaddingToCombined({
   right: unknown
   bottom: unknown
 }) {
-  return [parsePxValue(top), parsePxValue(right), parsePxValue(bottom), parsePxValue(left)].join(
-    ' '
-  )
+  return [
+    parsePxValue(top),
+    parsePxValue(right),
+    parsePxValue(bottom),
+    parsePxValue(left),
+  ].join(' ')
 }

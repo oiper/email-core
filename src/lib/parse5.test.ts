@@ -65,7 +65,8 @@ describe('hasUnknownTags- Basic', () => {
   })
 
   it('should return true for multiple unknown tags', () => {
-    const html = '<div><unknownTag></unknownTag><anotherUnknown></anotherUnknown></div>'
+    const html =
+      '<div><unknownTag></unknownTag><anotherUnknown></anotherUnknown></div>'
     const knownTags = ['div']
     expect(hasUnknownTags(html, knownTags)).toBe(true)
   })

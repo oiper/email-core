@@ -27,12 +27,26 @@ export const horizontalAlignment = z.enum(['left', 'center', 'right'])
 export const verticalAlignment = z.enum(['top', 'middle', 'bottom'])
 
 export const borderStyleProperties = {
-  borderLeftWidth: z.number().optional().describe('Border left width of the component'),
-  borderRightWidth: z.number().optional().describe('Border right width of the component'),
-  borderTopWidth: z.number().optional().describe('Border top width of the component'),
-  borderBottomWidth: z.number().optional().describe('Border bottom width of the component'),
+  borderLeftWidth: z
+    .number()
+    .optional()
+    .describe('Border left width of the component'),
+  borderRightWidth: z
+    .number()
+    .optional()
+    .describe('Border right width of the component'),
+  borderTopWidth: z
+    .number()
+    .optional()
+    .describe('Border top width of the component'),
+  borderBottomWidth: z
+    .number()
+    .optional()
+    .describe('Border bottom width of the component'),
 
-  borderColor: hexColorSchema.optional().describe('Border color of the component'),
+  borderColor: hexColorSchema
+    .optional()
+    .describe('Border color of the component'),
   borderStyle: z
     .enum(['solid', 'dashed', 'dotted'])
     .optional()
@@ -40,10 +54,22 @@ export const borderStyleProperties = {
 }
 
 export const borderRadiusProperties = {
-  radiusTopLeft: z.number().optional().describe('Border radius left of the component'),
-  radiusTopRight: z.number().optional().describe('Border radius right of the component'),
-  radiusBottomLeft: z.number().optional().describe('Border radius top of the component'),
-  radiusBottomRight: z.number().optional().describe('Border radius bottom of the component'),
+  radiusTopLeft: z
+    .number()
+    .optional()
+    .describe('Border radius left of the component'),
+  radiusTopRight: z
+    .number()
+    .optional()
+    .describe('Border radius right of the component'),
+  radiusBottomLeft: z
+    .number()
+    .optional()
+    .describe('Border radius top of the component'),
+  radiusBottomRight: z
+    .number()
+    .optional()
+    .describe('Border radius bottom of the component'),
 }
 
 export const borderProperties = {
@@ -54,8 +80,14 @@ export const borderProperties = {
 export const paddingProperties = {
   paddingTop: z.number().optional().describe('Padding top of the component'),
   paddingLeft: z.number().optional().describe('Padding left of the component'),
-  paddingRight: z.number().optional().describe('Padding right of the component'),
-  paddingBottom: z.number().optional().describe('Padding bottom of the component'),
+  paddingRight: z
+    .number()
+    .optional()
+    .describe('Padding right of the component'),
+  paddingBottom: z
+    .number()
+    .optional()
+    .describe('Padding bottom of the component'),
 }
 
 export const containerPaddingProperties = {
@@ -81,11 +113,23 @@ export const textProperties = {
   color: hexColorSchema.optional().describe('Text color of the component'),
 
   fontSize: z.number().optional().describe('Text size of the component'),
-  fontFamily: z.string().optional().describe('Text font family of the component'),
-  fontWeight: z.enum(['bold', 'normal']).optional().describe('Text weight of the component'),
-  fontStyle: z.enum(['italic', 'normal']).optional().describe('Text style of the component'),
+  fontFamily: z
+    .string()
+    .optional()
+    .describe('Text font family of the component'),
+  fontWeight: z
+    .enum(['bold', 'normal'])
+    .optional()
+    .describe('Text weight of the component'),
+  fontStyle: z
+    .enum(['italic', 'normal'])
+    .optional()
+    .describe('Text style of the component'),
 
-  direction: z.enum(['ltr', 'rtl']).optional().describe('Text direction of the component'),
+  direction: z
+    .enum(['ltr', 'rtl'])
+    .optional()
+    .describe('Text direction of the component'),
   whiteSpace: z
     .enum(['normal', 'nowrap', 'pre'])
     .optional()
@@ -103,18 +147,38 @@ export const textProperties = {
   /**
    * Overline, underline, line-through
    */
-  textOverline: z.boolean().optional().describe('Text overline of the component'),
-  textUnderline: z.boolean().optional().describe('Text underline of the component'),
-  textLineThrough: z.boolean().optional().describe('Text line through of the component'),
+  textOverline: z
+    .boolean()
+    .optional()
+    .describe('Text overline of the component'),
+  textUnderline: z
+    .boolean()
+    .optional()
+    .describe('Text underline of the component'),
+  textLineThrough: z
+    .boolean()
+    .optional()
+    .describe('Text line through of the component'),
 
-  lineHeight: z.number().optional().describe('Text line height of the component'),
-  letterSpacing: z.number().optional().describe('Text letter spacing of the component'),
-  wordSpacing: z.number().optional().describe('Text word spacing of the component'),
+  lineHeight: z
+    .number()
+    .optional()
+    .describe('Text line height of the component'),
+  letterSpacing: z
+    .number()
+    .optional()
+    .describe('Text letter spacing of the component'),
+  wordSpacing: z
+    .number()
+    .optional()
+    .describe('Text word spacing of the component'),
 }
 
 export const widthProperties = {
   width: zPercentageValue.optional().describe('Width of the component'),
-  align: horizontalAlignment.optional().describe('Horizontal alignment of the component'),
+  align: horizontalAlignment
+    .optional()
+    .describe('Horizontal alignment of the component'),
 }
 
 export const maxWidthProperties = {

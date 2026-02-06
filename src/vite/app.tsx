@@ -36,8 +36,8 @@ export function App() {
             lineHeight: '1.6',
           }}
         >
-          A powerful, flexible email component library for building beautiful, responsive email
-          templates
+          A powerful, flexible email component library for building beautiful,
+          responsive email templates
         </p>
         <div
           style={{
@@ -134,7 +134,8 @@ export function App() {
                 margin: 0,
               }}
             >
-              Optimized for email clients with proper fallbacks and compatibility
+              Optimized for email clients with proper fallbacks and
+              compatibility
             </p>
           </div>
           <div
@@ -164,7 +165,8 @@ export function App() {
                 margin: 0,
               }}
             >
-              Mobile-first design that works perfectly across all devices and screen sizes
+              Mobile-first design that works perfectly across all devices and
+              screen sizes
             </p>
           </div>
         </div>

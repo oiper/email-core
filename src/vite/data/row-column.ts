@@ -23,7 +23,8 @@ export const rowColumnComponents: ComponentRenderer[] = [
             },
             {
               type: 'TEXT',
-              content: 'Build amazing email templates with our intuitive editor.',
+              content:
+                'Build amazing email templates with our intuitive editor.',
               fontSize: 16,
             },
           ],
@@ -72,7 +73,8 @@ export const rowColumnComponents: ComponentRenderer[] = [
             },
             {
               type: 'TEXT',
-              content: 'Lightning-fast performance with 99.9% uptime guarantee.',
+              content:
+                'Lightning-fast performance with 99.9% uptime guarantee.',
               textAlign: 'center',
             },
           ],
@@ -97,7 +99,8 @@ export const rowColumnComponents: ComponentRenderer[] = [
             },
             {
               type: 'TEXT',
-              content: 'Intuitive interface designed for both beginners and experts.',
+              content:
+                'Intuitive interface designed for both beginners and experts.',
               textAlign: 'center',
             },
           ],
@@ -310,7 +313,8 @@ export const rowColumnComponents: ComponentRenderer[] = [
             },
             {
               type: 'TEXT',
-              content: 'Subscribe to our newsletter for the latest updates and tips.',
+              content:
+                'Subscribe to our newsletter for the latest updates and tips.',
             },
           ],
         },
@@ -367,7 +371,8 @@ export const rowColumnComponents: ComponentRenderer[] = [
         },
         {
           type: 'TEXT',
-          content: 'This is a beautiful card component with image, title, and description.',
+          content:
+            'This is a beautiful card component with image, title, and description.',
           textAlign: 'center',
         },
       ],

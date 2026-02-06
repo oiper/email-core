@@ -42,7 +42,8 @@ export const sectionComponents: ComponentRenderer[] = [
         },
         {
           type: 'TEXT',
-          content: 'Discover all the amazing features we offer to help you succeed.',
+          content:
+            'Discover all the amazing features we offer to help you succeed.',
           color: '#6c757d',
         },
         {

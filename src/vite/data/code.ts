@@ -32,7 +32,8 @@ export const codeComponents: ComponentRenderer[] = [
     name: 'CSS Code',
     node: {
       type: 'CODE',
-      content: '.button {\n  background: blue;\n  color: white;\n  padding: 10px;\n}',
+      content:
+        '.button {\n  background: blue;\n  color: white;\n  padding: 10px;\n}',
       language: 'css',
       theme: 'a11yDark',
     },
@@ -41,7 +42,8 @@ export const codeComponents: ComponentRenderer[] = [
     name: 'Code with Line Numbers',
     node: {
       type: 'CODE',
-      content: 'const users = [\n  { name: "John", age: 30 },\n  { name: "Jane", age: 25 }\n];',
+      content:
+        'const users = [\n  { name: "John", age: 30 },\n  { name: "Jane", age: 25 }\n];',
       language: 'javascript',
       theme: 'a11yDark',
       showLineNumber: true,
@@ -51,7 +53,8 @@ export const codeComponents: ComponentRenderer[] = [
     name: 'Dark Theme Code',
     node: {
       type: 'CODE',
-      content: '\n\nexport default function App() {\n  return <div>Hello React!</div>;\n}',
+      content:
+        '\n\nexport default function App() {\n  return <div>Hello React!</div>;\n}',
       language: 'javascript',
       theme: 'a11yDark',
       bgColor: '#1e1e1e',

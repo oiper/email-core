@@ -6,9 +6,15 @@ type EmailRowNodeCore = z.infer<typeof core.emailRowSchemaBase>
 type EmailColumnNodeCore = z.infer<typeof core.emailColumnSchema>
 type EmailSectionNodeCore = z.infer<typeof core.emailSectionSchemaBase>
 
-export type TEmailNodeRow = Prettify<EmailRowNodeCore & { columns: TEmailNodeColumn[] }>
-export type TEmailNodeColumn = Prettify<EmailColumnNodeCore & { children: TEmailNodeUnion[] }>
-export type TEmailNodeSection = Prettify<EmailSectionNodeCore & { children: TEmailNodeUnion[] }>
+export type TEmailNodeRow = Prettify<
+  EmailRowNodeCore & { columns: TEmailNodeColumn[] }
+>
+export type TEmailNodeColumn = Prettify<
+  EmailColumnNodeCore & { children: TEmailNodeUnion[] }
+>
+export type TEmailNodeSection = Prettify<
+  EmailSectionNodeCore & { children: TEmailNodeUnion[] }
+>
 
 export type TEmailNodeHTML = z.infer<typeof core.emailHTMLSchema>
 export type TEmailNodeCode = z.infer<typeof core.emailCodeSchema>

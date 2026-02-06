@@ -1,6 +1,9 @@
 import { TEmailNodeUnion } from '../types.t'
 
-export function deleteNodeFromBodyByRef(body: TEmailNodeUnion[], reference: TEmailNodeUnion): void {
+export function deleteNodeFromBodyByRef(
+  body: TEmailNodeUnion[],
+  reference: TEmailNodeUnion
+): void {
   for (let i = body.length - 1; i >= 0; i--) {
     const node = body[i]
 

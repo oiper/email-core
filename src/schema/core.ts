@@ -11,8 +11,14 @@ type PrismThemes = keyof Omit<Prettify<typeof codeBlockModule>, 'CodeBlock'>
 
 const baseSchema = z.object({
   linkHref: z.string().optional().describe('Link href of the component'),
-  hideOn: z.enum(['mobile', 'desktop']).optional().describe('Hide on mobile or desktop'),
-  meta: z.record(z.string(), z.unknown()).optional().describe('Meta data of the component'),
+  hideOn: z
+    .enum(['mobile', 'desktop'])
+    .optional()
+    .describe('Hide on mobile or desktop'),
+  meta: z
+    .record(z.string(), z.unknown())
+    .optional()
+    .describe('Meta data of the component'),
 })
 
 export const emailRowSchemaBase = baseSchema.extend({
@@ -22,10 +28,17 @@ export const emailRowSchemaBase = baseSchema.extend({
   ...helpers.containerPaddingProperties,
 
   type: z.literal(emailNodeTypeMap.Row),
-  gap: helpers.zPercentageValue.optional().describe('Gap between columns of the row'),
+  gap: helpers.zPercentageValue
+    .optional()
+    .describe('Gap between columns of the row'),
 
-  sideGap: helpers.zPercentageValue.optional().describe('Padding around the row'),
-  hideSideGapOnMobile: z.boolean().optional().describe('Hide side gap on mobile'),
+  sideGap: helpers.zPercentageValue
+    .optional()
+    .describe('Padding around the row'),
+  hideSideGapOnMobile: z
+    .boolean()
+    .optional()
+    .describe('Hide side gap on mobile'),
 })
 
 export const emailColumnSchema = baseSchema.extend({
@@ -35,7 +48,9 @@ export const emailColumnSchema = baseSchema.extend({
   ...helpers.borderStyleProperties,
 
   type: z.literal(emailNodeTypeMap.Column),
-  vAlign: helpers.verticalAlignment.optional().describe('Vertical alignment of the column'),
+  vAlign: helpers.verticalAlignment
+    .optional()
+    .describe('Vertical alignment of the column'),
 })
 
 export const emailSectionSchemaBase = baseSchema.extend({
@@ -46,8 +61,13 @@ export const emailSectionSchemaBase = baseSchema.extend({
   type: z.literal(emailNodeTypeMap.Section),
   gap: z.number().optional().describe('Gap between the children'),
 
-  sideGap: helpers.zPercentageValue.optional().describe('Padding around the section'),
-  hideSideGapOnMobile: z.boolean().optional().describe('Hide side gap on mobile'),
+  sideGap: helpers.zPercentageValue
+    .optional()
+    .describe('Padding around the section'),
+  hideSideGapOnMobile: z
+    .boolean()
+    .optional()
+    .describe('Hide side gap on mobile'),
 })
 
 export const emailHTMLSchema = baseSchema.extend({
@@ -76,13 +96,20 @@ export const emailCodeSchema = baseSchema.extend({
   type: z.literal(emailNodeTypeMap.Code),
   content: z.string().describe('Code content of the component'),
 
-  bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
+  bgColor: helpers.hexColorSchema
+    .optional()
+    .describe('Background color of the component'),
   fontSize: z.number().optional().describe('Font size of the component'),
   fontFamily: z.string().optional().describe('Font family of the component'),
-  showLineNumber: z.boolean().optional().describe('Show line number of the component'),
+  showLineNumber: z
+    .boolean()
+    .optional()
+    .describe('Show line number of the component'),
 
   language: z
-    .enum<PrismLanguage[]>(Object.keys(prismjs.languages) as [PrismLanguage, ...PrismLanguage[]])
+    .enum<
+      PrismLanguage[]
+    >(Object.keys(prismjs.languages) as [PrismLanguage, ...PrismLanguage[]])
     .describe('Language of the component. Should be a valid Prism language'),
 
   theme: z
@@ -101,7 +128,9 @@ export const emailTextSchema = baseSchema.extend({
 
   type: z.literal(emailNodeTypeMap.Text),
   content: helpers.zTextString.describe('Text content of the component'),
-  bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
+  bgColor: helpers.hexColorSchema
+    .optional()
+    .describe('Background color of the component'),
 })
 
 export const emailHeadingSchema = baseSchema.extend({
@@ -115,7 +144,9 @@ export const emailHeadingSchema = baseSchema.extend({
   as: z.enum(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
 
   content: z.string().describe('Heading content of the component'),
-  bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
+  bgColor: helpers.hexColorSchema
+    .optional()
+    .describe('Background color of the component'),
 })
 
 export const emailButtonSchema = baseSchema.extend({
@@ -127,7 +158,9 @@ export const emailButtonSchema = baseSchema.extend({
 
   type: z.literal(emailNodeTypeMap.Button),
   content: helpers.zTextString.describe('Text content of the component'),
-  bgColor: helpers.hexColorSchema.optional().describe('Background color of the component'),
+  bgColor: helpers.hexColorSchema
+    .optional()
+    .describe('Background color of the component'),
 })
 
 export const emailImageSchema = baseSchema.extend({
@@ -146,7 +179,9 @@ export const emailSpacerSchema = baseSchema.extend({
 
   type: z.literal(emailNodeTypeMap.Spacer),
   height: z.number().describe('Height of the spacer'),
-  bgColor: helpers.hexColorSchema.optional().describe('Background color of the spacer'),
+  bgColor: helpers.hexColorSchema
+    .optional()
+    .describe('Background color of the spacer'),
 })
 
 export const emailSectionSchema = emailSectionSchemaBase.extend({
@@ -168,7 +203,9 @@ export const emailRowSchema = emailRowSchemaBase.extend({
           ),
       })
     )
-    .describe(`Columns of the row. Must be an array of ${emailNodeTypeMap.Column}`),
+    .describe(
+      `Columns of the row. Must be an array of ${emailNodeTypeMap.Column}`
+    ),
 })
 
 export const zodEmailNodeSchema: z.ZodType<TEmailNodeUnion> = z.lazy(() => {
