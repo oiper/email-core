@@ -695,7 +695,6 @@ describe('deleteNodeFromBodyByRef', () => {
         content: 'Maximal text',
         linkHref: 'https://example.com',
         hideOn: 'desktop',
-        meta: { custom: 'data', nested: { deep: 'value' } },
         fontSize: 16,
         fontFamily: 'Arial',
         color: '#000000',

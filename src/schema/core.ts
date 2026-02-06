@@ -15,10 +15,6 @@ const baseSchema = z.object({
     .enum(['mobile', 'desktop'])
     .optional()
     .describe('Hide on mobile or desktop'),
-  meta: z
-    .record(z.string(), z.unknown())
-    .optional()
-    .describe('Meta data of the component'),
 })
 
 export const emailRowSchemaBase = baseSchema.extend({
