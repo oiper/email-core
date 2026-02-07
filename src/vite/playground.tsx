@@ -38,9 +38,8 @@ export function Playground() {
     <div
       style={{
         display: 'flex',
-        height: 'calc(100vh - 64px)',
+        height: 'calc(100vh - (70px + 32px))',
         gap: '1rem',
-        background: '#f8f9fa',
       }}
     >
       <div
